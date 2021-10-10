@@ -1,0 +1,16 @@
+2.Construa uma gramática REGULAR a partir da expressão regular  a(ba)∗a . Teste a validade da sua gramática para 3 palavras de sua escolha.
+Q = {'q0','q1','q2','q3','q4'}
+Sigma = {'a','b','ba'}
+delta = {
+    ('q0','a'):{'q1'},
+    ('q1','ba'):{'q2'},
+    ('q1','a'):{'q4'},
+    ('q2','ba'):{'q2'},
+    ('q2','a'):{'q3'},
+
+}
+
+q0 = 'q0'
+F = {'q3','q4'}
+M = AFN(Q,Sigma,delta,q0,F)
+M.visualizar()
