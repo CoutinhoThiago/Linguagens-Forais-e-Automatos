@@ -1,0 +1,22 @@
+Construa um AFD para a seguinte linguagem sobre o alfabeto  Σ={0,1} : O conjunto das palavras em que o símbolo na posicao  i  difere do símbolo na posicao  i+2  , para  i≥1 .
+Q = {'q0','r1','r2','r3','r4','r5','s1','s2','s3'}
+Sigma = {'0','1'}
+delta = {('q0','0'):'r1',
+         ('q0','1'):'s1',
+         ('r1','1'):'r2',
+         ('r2','1'):'r3',
+         ('s1','0'):'s2',
+         ('s2','0'):'s3',
+         ('r1','0'):'r5',
+         ('r5','1'):'r2',
+         ('s3','1'):'r2',
+         ('r3','0'):'r4',
+         ('r4','0'):'r5',
+         ('s1','1'):'r3',
+         }
+q0 = 'q0'
+F = {'q0','r1','r2','r3','r4','r5','s1','s2','s3'}
+
+M = AFD(Q,Sigma,delta,q0,F)
+M.visualizar()
+#M.aceita("0110010")

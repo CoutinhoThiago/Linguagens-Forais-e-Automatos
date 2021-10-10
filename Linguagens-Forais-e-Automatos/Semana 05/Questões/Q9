@@ -1,0 +1,17 @@
+Construa um AFD sobre  Σ={a,b}  que reconheça o conjunto das palavras com quantidade par de  a 's ou ímpar de  b 's (mas não ambos).
+Q = {'f','apbi', 'aibp',} #(apbp = a par, b par = (F) ) | (apbi = a par, b impar) | (aibp = a impar, b par) | (aibi = (F)
+Sigma = {'a','b'}
+delta = {('f','a'): 'aibp',
+         ('f','b'): 'apbi',
+         ('aibp','a'): 'f',
+         ('aibp','b'): 'f',
+         ('apbi','a'): 'f',
+         ('apbi','b'): 'f',
+         ('f','a'): 'apbi',
+         ('f','b'): 'aibp'
+}
+q0 = 'f'
+F = {'f'}
+M = AFD(Q,Sigma,delta,q0,F)
+M.visualizar()
+#M.aceita("bbbb")

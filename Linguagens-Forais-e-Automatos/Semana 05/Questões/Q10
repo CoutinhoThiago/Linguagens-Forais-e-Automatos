@@ -1,0 +1,8 @@
+Construa uma Gramatica com a menor quantidade de regras possível para gerar os casos de teste do problema: https://www.urionlinejudge.com.br/judge/pt/problems/view/1726
+G = [V , Σ, P, S]
+V = [S, A, B, T]
+Σ = [ { , }, +, *, -, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+S → (A) | A | S + S | S * S | S - S
+A → B + B | B * B | B - B | B
+B → {T}
+T → aT | bT | cT | dT | eT | fT | gT | hT | iT | jT | kT | lT | mT | nT | oT | pT | qT | rT | sT | tT | uT | vT | wT | xT | yT | zT | λ
