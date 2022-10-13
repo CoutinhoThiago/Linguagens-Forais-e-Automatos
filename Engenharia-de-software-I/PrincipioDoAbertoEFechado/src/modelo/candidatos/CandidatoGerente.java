@@ -1,7 +1,10 @@
-package modelo;
+package modelo.candidatos;
+
+import modelo.candidatos.criador.CriadorContasGerente;
+import modelo.interfaces.ICandidato;
+import modelo.interfaces.ICriadorContas;
 
 public class CandidatoGerente implements ICandidato {
-
 	private String nome;
 	private String sobrenome;
 	
@@ -14,7 +17,6 @@ public class CandidatoGerente implements ICandidato {
 	public String getNome() {
 		return nome;
 	}
-	
 	@Override
 	public String getSobrenome() {
 		return sobrenome;

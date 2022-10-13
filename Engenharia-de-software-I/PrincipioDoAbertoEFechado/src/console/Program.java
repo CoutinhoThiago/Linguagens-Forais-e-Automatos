@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import modelo.*;
+import modelo.candidatos.CandidatoDiretor;
+import modelo.candidatos.CandidatoGenerico;
+import modelo.candidatos.CandidatoGerente;
+import modelo.interfaces.ICandidato;
 
 public class Program {
 

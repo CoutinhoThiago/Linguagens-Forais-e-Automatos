@@ -11,15 +11,13 @@ public class Empregado {
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
+	
 	public String getSobrenome() {
 		return sobrenome;
 	}
-
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
@@ -27,7 +25,6 @@ public class Empregado {
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -35,7 +32,6 @@ public class Empregado {
 	public boolean isGerente() {
 		return gerente;
 	}
-
 	public void setGerente(boolean gerente) {
 		this.gerente = gerente;
 	}
@@ -43,7 +39,6 @@ public class Empregado {
 	public boolean isDiretor() {
 		return diretor;
 	}
-
 	public void setDiretor(boolean diretor) {
 		this.diretor = diretor;
 	}

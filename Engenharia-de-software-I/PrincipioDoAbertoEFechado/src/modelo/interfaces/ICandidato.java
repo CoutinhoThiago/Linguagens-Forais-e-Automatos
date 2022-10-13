@@ -1,4 +1,4 @@
-package modelo;
+package modelo.interfaces;
 
 public interface ICandidato {
 	public String getNome();

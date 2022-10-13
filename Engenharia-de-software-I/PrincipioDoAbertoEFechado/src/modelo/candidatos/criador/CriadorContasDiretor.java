@@ -1,4 +1,8 @@
-package modelo;
+package modelo.candidatos.criador;
+
+import modelo.Empregado;
+import modelo.interfaces.ICandidato;
+import modelo.interfaces.ICriadorContas;
 
 public class CriadorContasDiretor implements ICriadorContas {
 
