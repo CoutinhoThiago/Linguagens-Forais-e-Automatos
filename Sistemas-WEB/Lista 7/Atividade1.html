@@ -1,0 +1,51 @@
+<!DOCtype html>
+
+<html>
+    <head> 
+        <title>HTML - formulários - Atividade 1</title> 
+        <meta name="author" content="Thiago Coutinho Sousa Silva">
+        <meta name="keywords" content="matc82, sistemas web, 219217086">
+        <meta name ="description" content="Atividades sobre formulários">
+    </head> 
+    <body>
+        <form action= "dados.html" method= "get" enctype = “text/plain”>
+            <div>
+                Nome: <input type=text name=nome>
+            </div>
+            <br>
+            <div>
+                Login: <input type=text name=login>
+            </div>
+            <br>
+            <div>
+                Senha: <input type=password name=senha>
+            </div>
+            <br>
+            <div>
+                Estado Civil:  
+                <br>
+                <select name=estadoCivil>
+                    <option selected>Solteir@</option>
+                    <option>Casad@</option>
+                    <option>Divorciad@</option>
+                    <option>Viuv@</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                Qual seu sexo ?:
+                <br>
+                <input type="checkbox" name="Sexo" value=1>Masculino<br>
+                <input type="checkbox" name="Sexo" value=1>Feminino<br>
+                <input type="checkbox" name="Sexo" value=1>Outros<br>
+                <input type="checkbox" name="Sexo" value=1>Não especificar<br>
+                <input type="checkbox" name="Sexo" value=1 checked>Personalizado<br>
+            </div>
+            <br>
+            <div>
+                <button type=submit size=15 name="button">Enviar</button>
+                <button type=reset size=15 name="button">Limpar</button>
+            </div>
+        </form>
+    </body>  
+</html>

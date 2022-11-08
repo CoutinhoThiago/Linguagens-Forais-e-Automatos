@@ -1,0 +1,58 @@
+<!DOCtype html>
+
+<html>
+    <head> 
+        <title>HTML - formulários - Atividade 2</title> 
+        <meta name="author" content="Thiago Coutinho Sousa Silva">
+        <meta name="keywords" content="matc82, sistemas web, 219217086">
+        <meta name ="description" content="Atividades sobre formulários">
+    </head> 
+    <body>
+        <form action= "dados.html" method= "post" enctype = “text/plain”>
+            <div>
+                Nome: <input type=text name=nome size=15>
+            </div>
+            <br>
+            <div>
+                E-mail: <input type=e-mail name=email size=15>
+            </div>
+            <br>
+            <div>
+                Telefone: <input type=tel name=telefone size=15 maxlength=12> <!--71 9 9999 9999-->
+            </div>
+            <br>
+            <div>
+                Escolha com tipo de comida:  
+                <br>
+                <select name=comida>
+                    <option selected>Lanches</option>
+                    <option>Japonesa</option>
+                    <option>Brasileira</option>
+                    <option>Massas</option>
+                    <option>Pizza</option>
+                    <option>Chinesa</option>
+                    <option>Sorvete</option>
+                    <option>Arabe</option>
+                    <option>Vegetariana</option> <!--errado-->
+                </select>
+            </div>
+            <br>
+            <div>
+                Comentário:
+                <br>
+                <textarea name=comentario rows=30 cols=30></textarea>
+            </div>
+            <br>
+            <div>
+                Data do pedido:
+                <br>
+                <input type=datetime-local name=data_e_hora>
+            </div>
+            <br>
+            <div>
+                <button type=submit size=15 name="button">Enviar</button>
+                <button type=reset size=15 name="button">Limpar</button>
+            </div>
+        </form>
+    </body>  
+</html>
