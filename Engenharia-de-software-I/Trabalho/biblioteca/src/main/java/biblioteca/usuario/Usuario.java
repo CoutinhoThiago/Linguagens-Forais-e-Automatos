@@ -1,45 +1,33 @@
 package biblioteca.usuario;
 
-public class Usuario {
+import biblioteca.usuario.interfaces.Fncionalidades;
+
+public class Usuario implements Fncionalidades {
 	private String nome;
 	private String sobrenome;
-	private String email;
+	
+	private int tempoDeImprestimo = 3;
+	private int quantidadeDeItensReservados;
 	
 	private boolean alunoDePosGraduacao;
 	private boolean professor;
 	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	public String getSobrenome() {
-		return sobrenome;
-	}
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
+	public void pegarLivroEmprestado() {
+	}	
+	public void reservarLivro() {
 	}
 
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	public int getTempoDeImprestimo() {return tempoDeImprestimo;}
+	public void setTempoDeImprestimo(int tempoDeImprestimo) {this.tempoDeImprestimo = tempoDeImprestimo;}
+	public int getQuantidadeDeItensReservados() {return quantidadeDeItensReservados;}
+	public void setQuantidadeDeItensReservados(int quantidadeDeItensReservados) {this.quantidadeDeItensReservados = quantidadeDeItensReservados;}
 
-	public boolean isAlunoDePosGraduacao() {
-		return alunoDePosGraduacao;
-	}
-	public void setAlunoDePosGraduacao(boolean alunoDePosGraduacao) {
-		this.alunoDePosGraduacao = alunoDePosGraduacao;
-	}
-
-	public boolean isProfessor() {
-		return professor;
-	}
-	public void setProfessor(boolean professor) {
-		this.professor = professor;
-	}
+	public String getNome() {return nome;}
+	public void setNome(String nome) {this.nome = nome;}
+	public String getSobrenome() {return sobrenome;}
+	public void setSobrenome(String sobrenome) {this.sobrenome = sobrenome;}
+	public boolean isAlunoDePosGraduacao() {return alunoDePosGraduacao;}
+	public void setAlunoDePosGraduacao(boolean alunoDePosGraduacao) {this.alunoDePosGraduacao = alunoDePosGraduacao;}
+	public boolean isProfessor() {return professor;}
+	public void setProfessor(boolean professor) {this.professor = professor;}
 }
