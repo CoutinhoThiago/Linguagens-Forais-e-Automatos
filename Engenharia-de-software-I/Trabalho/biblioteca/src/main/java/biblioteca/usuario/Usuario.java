@@ -15,6 +15,8 @@ public class Usuario implements Fncionalidades {
 	private boolean alunoDePosGraduacao;
 	private boolean professor;
 	
+	private boolean emAtraso;
+	
 	public void pegarLivroEmprestado() {
 	}	
 	public void reservarLivro() {
@@ -38,4 +40,6 @@ public class Usuario implements Fncionalidades {
 	public void setAlunoDePosGraduacao(boolean alunoDePosGraduacao) {this.alunoDePosGraduacao = alunoDePosGraduacao;}
 	public boolean isProfessor() {return professor;}
 	public void setProfessor(boolean professor) {this.professor = professor;}
+	public boolean isEmAtraso() {return emAtraso;}
+	public void setEmAtraso(boolean emAtraso) {this.emAtraso = emAtraso;}
 }

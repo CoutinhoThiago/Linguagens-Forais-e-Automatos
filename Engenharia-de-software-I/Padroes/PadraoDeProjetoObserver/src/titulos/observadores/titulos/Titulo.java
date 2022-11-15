@@ -1,7 +1,10 @@
 package titulos.observadores.titulos;
 
 
-import java.util.*;
+import java.util.ArrayList;
+
+import titulos.observadores.Observer;
+import titulos.observados.Subject;
 
 public class Titulo implements Subject {
 	private ArrayList<Observer> observers;
