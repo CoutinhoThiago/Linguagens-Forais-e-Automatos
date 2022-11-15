@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="biblioteca.item.Livro"/>
+    <fullyQualifiedTypeName name="titulos.observados.Subject"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="biblioteca.usuario.tipo.AlunoDeGraduacao"/>
+    <fullyQualifiedTypeName name="biblioteca.usuario.interfaces.IUsuario"/>
+    <fullyQualifiedTypeName name="biblioteca.usuario.tipo.AlunoDePosGraduacao"/>
+    <fullyQualifiedTypeName name="biblioteca.usuario.tipo.Professor"/>
+    <fullyQualifiedTypeName name="biblioteca.usuario.Usuario"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+</qualifiedTypeNameHistroy>

@@ -1,5 +1,7 @@
 package biblioteca.usuario.interfaces;
 
+import biblioteca.usuario.Usuario;
+
 public interface ICriadorContas {
-	public Fncionalidades criar(IUsuario aluno); 
+	public Usuario criar(IInscricao aluno); 
 }

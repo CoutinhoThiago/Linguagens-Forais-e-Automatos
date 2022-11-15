@@ -3,10 +3,10 @@ package biblioteca.usuario.tipo;
 import biblioteca.item.Livro;
 import biblioteca.usuario.criador.CriadorContasAlunoDePosGraduacao;
 import biblioteca.usuario.interfaces.ICriadorContas;
-import biblioteca.usuario.interfaces.IUsuario;
+import biblioteca.usuario.interfaces.IInscricao;
 import biblioteca.usuario.interfaces.Observer;
 
-public class AlunoDePosGraduacao implements IUsuario, Observer {
+public class AlunoDePosGraduacao implements IInscricao, Observer {
 	private String nome;
 	private String sobrenome;
 	

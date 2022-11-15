@@ -1,6 +1,6 @@
 package biblioteca.usuario.interfaces;
 
-public interface IUsuario {
+public interface IInscricao {
 	public String getNome();
 	public String getSobrenome();
 	
