@@ -7,83 +7,87 @@ import java.util.Scanner;
 import biblioteca.item.Livro;
 import biblioteca.usuario.Usuario;
 import biblioteca.usuario.interfaces.IInscricao;
-import biblioteca.usuario.tipo.AlunoDeGraduacao;
-import biblioteca.usuario.tipo.AlunoDePosGraduacao;
-import biblioteca.usuario.tipo.Professor;
 
 public class test {
 
 	public static void main(String[] args) {
 		List<Livro> livros = new ArrayList<Livro>();
-		inicializarLivros(livros);
+		Dados.inicializarLivros(livros);
+		//Dados.mostrarLivros(livros);
 		
 		List<IInscricao> inscricoes = new ArrayList<IInscricao>();
 		List<Usuario> usuarios = new ArrayList<Usuario>();
-		inicializarUsuarios(inscricoes, usuarios);
-	
-		//CriarUsuario.criarUsuario(usuarios);
+		Dados.inicializarUsuarios(inscricoes, usuarios);
+		//Dados.mostrarUsuarios(usuarios);
 		
-		selecionarUsuario(usuarios);
+		//CriarUsuario.criarUsuario(usuarios);
+		//BuscarUsuario.selecionarUsuario(usuarios);
+		
+		selecionarFuncionalidade(usuarios, livros);
 	}
 
-	private static Usuario selecionarUsuario(List<Usuario> usuarios) {
+	private static void selecionarFuncionalidade(List<Usuario> usuarios, List<Livro> livros) {
+		System.out.println("Bom dia, O que o senhor deseja fazer ?"); // 
+		System.out.println("Digite: " + "emp" + ", " + 
+				"o código do usuario" + "e" + 
+				" o código do livro" + 
+				" para realizar o emprestimo de um livro");
+		System.out.println("Digite: " + "dev" + " para realizar a devolução de um livro");
+		System.out.println("Digite: " + "res" + " para realizar a reserva de um livro");
+		System.out.println("Digite: " + "obs" + " para se registrar como observador de um livro");
+		System.out.println("Digite: " + "liv" + " para realizar a consulta de um livro pelo seu código");
+		System.out.println("Digite: " + "usu" + " para realizar o consulta dos emprestimos de um usuário");
+		System.out.println("Digite: " + "ntf" + " para checar a quantidade de vezes que um professor foi notificado");
+		System.out.println("Digite: " + "sai" + " para sair do sistema");
 		Scanner ler = new Scanner(System.in);
-		System.out.println("Deseja mostrar a lista de usuarios ? (s/n)");
-		if (ler.next() != "n") {
-			for (Usuario usuario: usuarios){System.out.println(usuario.getNome() + " " + usuario.getSobrenome() + " " + usuario.getId() + "\n");}
-		}
+		while (true) { 
+			String[] entrada = ler.nextLine().split(" "); 
+			String operacao= entrada[0];
+			
+			if (operacao.equals("sai")) { System.out.println("adeuxxxxxx"); break;}
+			else if (operacao.equals("emp")) {
+				int codigoDoUsuario = Integer.parseInt(entrada[1]);
+				int codigoDoLivro = Integer.parseInt(entrada[2]);
+				//System.out.println(codigoDoUsuario);
+				//System.out.println(codigoDoLivro);
+				
+				Usuario usuario = null;
+				usuario = Buscar.buscarUsuario(usuarios, codigoDoUsuario, usuario);
+				Livro livro = null;
+				livro = Buscar.buscarLivro(livros, codigoDoLivro, livro);
+				
+				livro.pegarEmprestado(usuario, livro);
+				//Caso o usuário tenha uma reserva feita previamente por ele para o dado livro, a 
+				//reserva deve ser excluída e o empréstimo efetivado. 
+				
+				//Ao final do procedimentoo sistema deve emitir uma mensagem de sucesso ou insucesso, 
+				//que mencione o nome do usuário e o título do livro. 
+				//Se for uma mensagem de insucesso, ela deve também mencionar o motivo do insucesso
+			}
+			else if (operacao.equals("dev")) {
+				
+			}
+			else if (operacao.equals("res")) {
+				
+			}
+			
+			else if (operacao.equals("dev")) {
 		
+			}
+			
+			else if (operacao.equals("liv")) {
 		
-		System.out.println("Digite o id do usuario que irá realizar a ação");
-		int id = ler.nextInt(); // ler.nextLine(); //frase
+			}
+			else if (operacao.equals("usu")) {
 		
-		for (Usuario usuario: usuarios) {
-			if (usuario.getId() == id) {
-				String tipo = "Aluno de Graduação";
-				if (usuario.isProfessor()) {tipo = "Professor";}
-				else if (usuario.isAlunoDePosGraduacao()) {tipo = "Aluno de Pos Graduação";}
-				System.out.println(
-						"\n" +
-						"Id: " + usuario.getId() + "\n" +
-						"Tipo: " + tipo + "\n" +
-						"Nome: " + usuario.getNome() + " " + usuario.getSobrenome() + "\n");
-				return usuario; 
+			}
+			else if (operacao.equals("ntf")) {
+		
+			}
+			else {
+				System.out.println("Digite um comando valido ou sai para encerrar o programa");
+				System.out.println(operacao);
 			}
 		}
-		System.out.println("Usuario não encontrado");
-		return null;
-	}
-
-	private static void inicializarUsuarios(List<IInscricao> inscricoes, List<Usuario> usuarios) {
-		inscricoes.add(new AlunoDeGraduacao("Thiago", "Coutinho"));
-		inscricoes.add(new AlunoDeGraduacao("Keven", "Viana"));
-		inscricoes.add(new AlunoDePosGraduacao("Maria", "Souza"));
-		inscricoes.add(new Professor("Ana", "Lopes"));
-	    for (IInscricao inscricao: inscricoes) {usuarios.add(inscricao.obterCriadorContas().criar(inscricao));}
-		
-//		for (Usuario usuario: usuarios){
-//			String tipo = "Aluno de Graduação";
-//			if (usuario.isProfessor()) {tipo = "Professor";}
-//			else if (usuario.isAlunoDePosGraduacao()) {tipo = "Aluno de Pos Graduação";}
-//			System.out.println(
-//					"Novo alundo cadastrado" + "\n" +
-//					"Id: " + usuario.getId() + "\n" +
-//					"Tipo: " + tipo + "\n" +
-//					"Nome: " + usuario.getNome() + " " + usuario.getSobrenome() + "\n");
-//		}
-	}
-
-	private static void inicializarLivros(List<Livro> livros) {
-		livros.add(new Livro("Senhor dos Aneis", "Token", 5));
-		livros.add(new Livro("Game of Thones", "aaaaaaaaa", 3));
-		
-//		for (Livro livro: livros) {
-//			System.out.println(
-//					"Novo item cadastrado" + "\n" +
-//					"Id: " + livro.getId() + "\n" +
-//					"Titulo: " + livro.getNome() + "\n" +
-//					"Autor: " + livro.getAutor() + "\n" +
-//					"Exemplares: " + livro.getExemplares() + "\n");
-//	    }
 	}
 }

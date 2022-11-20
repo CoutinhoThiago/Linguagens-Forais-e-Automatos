@@ -2,7 +2,7 @@ package biblioteca.usuario.interfaces;
 
 public interface IInscricao {
 	public String getNome();
-	public String getSobrenome();
+	public int getCodigo();
 	
 	public ICriadorContas obterCriadorContas();
 }

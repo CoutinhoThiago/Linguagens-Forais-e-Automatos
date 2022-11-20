@@ -5,9 +5,8 @@ import java.util.Random;
 import biblioteca.usuario.interfaces.Fncionalidades;
 
 public class Usuario implements Fncionalidades {
-	private int id = 0; // código do usuario para facilitar a busca
+	private int codigo = 0; // código do usuario para facilitar a busca
 	private String nome;
-	private String sobrenome;
 	
 	private int tempoDeEmprestimo = 3;
 	private int quantidadeDeItensReservados;
@@ -27,15 +26,16 @@ public class Usuario implements Fncionalidades {
 	public int getQuantidadeDeItensReservados() {return quantidadeDeItensReservados;}
 	public void setQuantidadeDeItensReservados(int quantidadeDeItensReservados) {this.quantidadeDeItensReservados = quantidadeDeItensReservados;}
 
-	public int getId() {return id;}
+	public int getId() {return codigo;}
 	public void setId() {
 		Random gerador = new Random();
-		this.id = gerador.nextInt(99);
+		this.codigo = gerador.nextInt(99);
 		}
 	public String getNome() {return nome;}
 	public void setNome(String nome) {this.nome = nome;}
-	public String getSobrenome() {return sobrenome;}
-	public void setSobrenome(String sobrenome) {this.sobrenome = sobrenome;}
+	public int getCodigo() {return codigo;}
+	public void setCodigo(int codigo) {this.codigo = codigo;}
+	
 	public boolean isAlunoDePosGraduacao() {return alunoDePosGraduacao;}
 	public void setAlunoDePosGraduacao(boolean alunoDePosGraduacao) {this.alunoDePosGraduacao = alunoDePosGraduacao;}
 	public boolean isProfessor() {return professor;}

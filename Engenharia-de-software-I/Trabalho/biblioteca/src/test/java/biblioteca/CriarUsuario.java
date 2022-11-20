@@ -16,8 +16,9 @@ public class CriarUsuario {
 		
 		System.out.println("Por favor digite seu nome"); // 
 		String nome = ler.next(); // ler.nextLine(); //frase
-		System.out.println("Por favor digite seu sobre nome"); //
-		String sobreNome = ler.next();
+		
+		System.out.println("Por favor digite seu codigo nome"); //
+		int codigo = ler.nextInt();
 		
 		System.out.println("Selecione o tipo de usuario"); //
 		System.out.println("1 para aluno de graduação"); //
@@ -28,15 +29,15 @@ public class CriarUsuario {
 		String tipo = null;
 		IInscricao novoUsuario = null;
 		if (tipoDeUsuario == 1) {
-			novoUsuario = new AlunoDeGraduacao(nome, sobreNome);
+			novoUsuario = new AlunoDeGraduacao(codigo, nome);
 			tipo = "Aluno de Graduação";
 		}
 		else if (tipoDeUsuario == 2) {
-			novoUsuario = new AlunoDePosGraduacao(nome, sobreNome);		
+			novoUsuario = new AlunoDePosGraduacao(codigo, nome);		
 			tipo = "Aluno de Pos Graduação";
 		}
 		else if (tipoDeUsuario == 3) {
-			novoUsuario = new Professor(nome, sobreNome);
+			novoUsuario = new Professor(codigo, nome);
 			tipo = "Professor";
 		}
 		Usuario novo = novoUsuario.obterCriadorContas().criar(novoUsuario);
@@ -44,7 +45,7 @@ public class CriarUsuario {
 				"Novo alundo cadastrado" + "\n" +
 				"Id: " + novo.getId() + "\n" +
 				"Tipo: " + tipo + "\n" +
-				"Nome: " + novo.getNome() + " " + novo.getSobrenome() + "\n");
+				"Nome: " + novo.getNome() + "\n");
 		usuarios.add(novo);
 	}
 }

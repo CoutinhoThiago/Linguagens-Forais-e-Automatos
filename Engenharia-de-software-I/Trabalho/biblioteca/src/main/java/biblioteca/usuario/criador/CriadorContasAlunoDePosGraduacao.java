@@ -10,9 +10,8 @@ public class CriadorContasAlunoDePosGraduacao implements ICriadorContas {
     {
 		Usuario usuario = new Usuario();
 		
-		usuario.setId();
+		usuario.setCodigo(aluno.getCodigo());
         usuario.setNome(aluno.getNome());
-        usuario.setSobrenome(aluno.getSobrenome());
         
         usuario.setTempoDeEmprestimo(4); // 4 dias 
         usuario.setQuantidadeDeItensReservados(2); // 4 livros

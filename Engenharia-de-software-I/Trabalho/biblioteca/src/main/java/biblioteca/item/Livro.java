@@ -2,27 +2,71 @@ package biblioteca.item;
 
 import java.util.ArrayList;
 import java.util.Random;
-
 import biblioteca.item.estados.Disponivel;
 import biblioteca.item.estados.Emprestado;
 import biblioteca.item.estados.Reservado;
+import biblioteca.usuario.Usuario;
 import biblioteca.usuario.interfaces.Observer;
 
 public class Livro implements Subject {
 	
 	private ArrayList<Observer> observers;
 	
-	private int id; // código do livro para facilitar a busca
+	private int codigo;
 	private String nome;
+	private String editora;
 	private String autor;
-	private int exemplares;
+	private String Edicao;
+	private int anoDePublicacao;
+	private int exemplar;
 	
-	public Livro(String nome, String autor, int exemplares) {
-		this.setId();
+	public Estado estado = new Disponivel();
+	
+	public Livro(int codigo, String nome, String editora, String autor, String Edicao, int anoDePublicacao, int exemplar) {
+		this.codigo = codigo;
 		this.nome = nome;
 		this.autor = autor;
-		this.exemplares = exemplares;
+		this.editora = editora;
+		this.autor = autor;
+		this.Edicao = Edicao;
+		this.anoDePublicacao = anoDePublicacao;
+		this.exemplar = exemplar;
 	}
+	
+	//Padrão state
+    public void pegarEmprestado(Usuario usuario, Livro livro) {this.estado.pegarEmprestado(this);}
+	public void Devolver() {this.estado.Devolver(this);}
+	public void Reservar() {this.estado.Reservar(this);}
+	
+	public void registerObserver(biblioteca.usuario.interfaces.Observer o) {observers.add(o);}
+	public void removeObserver(biblioteca.usuario.interfaces.Observer o) {
+		int i = observers.indexOf(o);
+		if (i >= 0) {observers.remove(i);}
+	}
+	public void notifyObservers() {
+		for (int i = 0; i < observers.size(); i++) {
+			Observer observer = observers.get(i);
+			observer.update(this);
+		}
+	}
+	
+	public String getNome() {return nome;}
+	public void setNome(String nome) {this.nome = nome;}
+	public String getAutor() {return autor;}
+	public void setAutor(String autor) {this.autor = autor;}
+	public int getCodigo() {return codigo;}
+	public void setCodigo(int codigo) {this.codigo = codigo;}
+	public int getAnoDePublicacao() {return anoDePublicacao;}
+	public void setAnoDePublicacao(int anoDePublicacao) {this.anoDePublicacao = anoDePublicacao;}
+	public String getEditora() {return editora;}
+	public void setEditora(String editora) {this.editora = editora;}
+	public String getEdicao() {return Edicao;}
+	public void setEdicao(String edicao) {Edicao = edicao;}
+	
+	public int getExemplar() {return exemplar;}
+	public void setExemplar(int exemplar) {this.exemplar = exemplar;}
+	
+	//public Estado getEstado() {return estado;}
 	
 	// Padrao Singleton
 	public void pegarEmprestado(Livro livro) {
@@ -43,46 +87,4 @@ public class Livro implements Subject {
 		System.out.println("Reservando");
 		livro.estado= new Reservado();
 	}
-
-	
-	//Padrão state n deu certo
-//	public Livro(String nome, String autor, int exemplares) {
-//		Random gerador = new Random();
-//		int id = gerador.nextInt(99);
-//		for (int i = 0; i < exemplares; i++) {
-//			this.id = id;
-//			this.nome = nome;
-//	        this.autor = autor;
-//	        this.exemplares = i;
-//		}
-//	}
-	
-	public Estado estado = new Disponivel();
-    public void pegarEmprestado() {this.estado.pegarEmprestado(this);}
-	public void Devolver() {this.estado.Devolver(this);}
-	public void Reservar() {this.estado.Reservar(this);}
-	
-	public void registerObserver(biblioteca.usuario.interfaces.Observer o) {observers.add(o);}
-	public void removeObserver(biblioteca.usuario.interfaces.Observer o) {
-		int i = observers.indexOf(o);
-		if (i >= 0) {observers.remove(i);}
-	}
-	public void notifyObservers() {
-		for (int i = 0; i < observers.size(); i++) {
-			Observer observer = observers.get(i);
-			observer.update(this);
-		}
-	}
-	
-	public int getId() {return id;}
-	public void setId() {
-		Random gerador = new Random();
-		this.id = gerador.nextInt(99);
-		}
-	public String getNome() {return nome;}
-	public void setNome(String nome) {this.nome = nome;}
-	public String getAutor() {return autor;}
-	public void setAutor(String autor) {this.autor = autor;}
-	public int getExemplares() {return exemplares;}
-	public void setExemplares(int exemplares) {this.exemplares = exemplares;}
 }

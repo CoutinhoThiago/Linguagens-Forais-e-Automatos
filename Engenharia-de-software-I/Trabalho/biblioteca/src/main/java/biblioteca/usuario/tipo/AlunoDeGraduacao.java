@@ -7,8 +7,8 @@ import biblioteca.usuario.interfaces.IInscricao;
 import biblioteca.usuario.interfaces.Observer;
 
 public class AlunoDeGraduacao implements IInscricao, Observer {
+	private int codigo;
 	private String nome;
-	private String sobrenome;
 	
 	private int tempoDeImprestimo;
 	private int quantidadeDeItensReservados;
@@ -18,13 +18,13 @@ public class AlunoDeGraduacao implements IInscricao, Observer {
 		
 	}
 	
-	public AlunoDeGraduacao(String nome, String sobrenome) {
+	public AlunoDeGraduacao(int codigo, String nome) {
+		this.codigo = codigo;
 		this.nome = nome;
-		this.sobrenome = sobrenome;
 	}	
 	
 	public String getNome() {return nome;}
-	public String getSobrenome() {return sobrenome;}
+	public int getCodigo() {return codigo;}
 	public ICriadorContas obterCriadorContas() {return new CriadorContasAlunoDeGraduacao();}
 
 	public int getTempoDeImprestimo() {return tempoDeImprestimo;}
