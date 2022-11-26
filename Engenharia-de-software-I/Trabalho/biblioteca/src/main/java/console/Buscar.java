@@ -1,4 +1,4 @@
-package biblioteca;
+package console;
 
 import java.util.List;
 import java.util.Scanner;
@@ -8,7 +8,7 @@ import biblioteca.item.estados.Disponivel;
 import biblioteca.usuario.Usuario;
 
 public class Buscar {
-	static Usuario buscarUsuario(List<Usuario> usuarios, int codigoDoUsuario, Usuario usuario) {
+	static Usuario buscarUsuario(List<Usuario> usuarios, int codigoDoUsuario) {
 		for(int i = 0; i < usuarios.size(); i++){
 			System.out.println("buscando usuario...");
 			if(usuarios.get(i).getCodigo() == codigoDoUsuario) {
@@ -22,10 +22,10 @@ public class Buscar {
 		    	}
 		    }
 		}
-		return usuario;
+		return null;
 	}
 	
-	static Livro buscarLivro(List<Livro> livros, int codigoDoLivro, Livro livro) {
+	static Livro buscarLivro(List<Livro> livros, int codigoDoLivro) {
 		for(int i = 0; i < livros.size(); i++){
 			System.out.println("buscando livro...");
 			if(livros.get(i).getCodigo() == codigoDoLivro) {
@@ -38,11 +38,9 @@ public class Buscar {
 		    	if (i >= livros.size()-1) {
 		    		System.out.println("Livro não encontrado!");
 		    		break;
-		    		
 		    	}
 		    }
 		}
-		return livro;
+		return null;
 	}
-
 }
