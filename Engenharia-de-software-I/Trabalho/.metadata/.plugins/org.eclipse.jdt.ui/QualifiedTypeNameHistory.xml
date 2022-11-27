@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="biblioteca.item.Livro"/>
-    <fullyQualifiedTypeName name="biblioteca.usuario.tipo.AlunoDeGraduacao"/>
     <fullyQualifiedTypeName name="biblioteca.usuario.interfaces.IUsuario"/>
     <fullyQualifiedTypeName name="biblioteca.usuario.tipo.AlunoDePosGraduacao"/>
     <fullyQualifiedTypeName name="biblioteca.usuario.tipo.Professor"/>
-    <fullyQualifiedTypeName name="biblioteca.usuario.Usuario"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="titulos.observados.Subject"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -13,4 +10,14 @@
     <fullyQualifiedTypeName name="biblioteca.item.estado.Estado"/>
     <fullyQualifiedTypeName name="biblioteca.item.estado.estados.Disponivel"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="biblioteca.item.Biblioteca"/>
+    <fullyQualifiedTypeName name="biblioteca.Biblioteca"/>
+    <fullyQualifiedTypeName name="console.comandos.consultas.ConsultarLivro"/>
+    <fullyQualifiedTypeName name="console.comandos.consultas.ConsultarUsuario"/>
+    <fullyQualifiedTypeName name="console.comandos.consultas.ConsultarNotificacoes"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="biblioteca.usuario.Usuario"/>
+    <fullyQualifiedTypeName name="biblioteca.item.Livro"/>
+    <fullyQualifiedTypeName name="biblioteca.Emprestimo"/>
+    <fullyQualifiedTypeName name="biblioteca.usuario.tipo.AlunoDeGraduacao"/>
 </qualifiedTypeNameHistroy>

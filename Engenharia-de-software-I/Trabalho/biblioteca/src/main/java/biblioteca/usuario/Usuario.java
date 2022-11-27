@@ -1,7 +1,11 @@
 package biblioteca.usuario;
 
+import java.util.List;
 import java.util.Random;
 
+import biblioteca.Emprestimo;
+import biblioteca.Reserva;
+import biblioteca.item.Livro;
 import biblioteca.usuario.interfaces.Fncionalidades;
 
 public class Usuario implements Fncionalidades {
@@ -11,10 +15,13 @@ public class Usuario implements Fncionalidades {
 	private int tempoDeEmprestimo = 3;
 	private int quantidadeDeItensReservados;
 	
-	private boolean alunoDePosGraduacao;
-	private boolean professor;
+	private boolean alunoDePosGraduacao = false;
+	private boolean professor = false;
 	
 	private boolean emAtraso;
+	
+	public List<Reserva> listaDeReservas;
+	public List<Emprestimo> listaDeEmprestimos;
 	
 	public void pegarLivroEmprestado() {
 	}	
@@ -40,6 +47,7 @@ public class Usuario implements Fncionalidades {
 	public void setAlunoDePosGraduacao(boolean alunoDePosGraduacao) {this.alunoDePosGraduacao = alunoDePosGraduacao;}
 	public boolean isProfessor() {return professor;}
 	public void setProfessor(boolean professor) {this.professor = professor;}
+	
 	public boolean isEmAtraso() {return emAtraso;}
 	public void setEmAtraso(boolean emAtraso) {this.emAtraso = emAtraso;}
 }

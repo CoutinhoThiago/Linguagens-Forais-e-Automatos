@@ -8,9 +8,7 @@ import console.Comando;
 
 public class ConsultarUsuario implements Comando { // Ex: "usu"
 	@Override
-	public void executar(Usuario usuario, Livro livro) {}
-	@Override
-	public void consultarUsuario(Usuario usuario) { //Para solicitar tal consulta, o usuário deverá digitar o comando “usu”, seguido do código do usuário.
+	public void executar(Usuario usuario, Livro livro) {
 		//Dado um usuário
 		//o sistema deverá apresentar 
 		System.out.println("lista de todos os seus empréstimos correntes");
@@ -30,8 +28,4 @@ public class ConsultarUsuario implements Comando { // Ex: "usu"
 				System.out.println("o título do livro reservado"); 
 				System.out.println("a data da solicitação da reserva.");
 	}
-	@Override
-	public void consultarLivro(Livro livro) {}
-	@Override
-	public void consultarNotificacoes(Usuario usuario) {} 
 }
