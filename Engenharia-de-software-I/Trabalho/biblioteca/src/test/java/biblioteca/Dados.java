@@ -10,12 +10,15 @@ import biblioteca.usuario.tipo.AlunoDePosGraduacao;
 import biblioteca.usuario.tipo.Professor;
 
 public class Dados {
-	static void inicializarUsuarios(List<IInscricao> inscricoes, List<Usuario> usuarios) {
-		inscricoes.add(new AlunoDeGraduacao(123, "João da Silva"));
-		inscricoes.add(new AlunoDePosGraduacao(456, "Luiz Fernando Rodrigues"));
-		inscricoes.add(new AlunoDeGraduacao(789, "Pedro Paulo"));
-		inscricoes.add(new Professor(100, "Carlos Lucena"));
-	    for (IInscricao inscricao: inscricoes) {usuarios.add(inscricao.obterCriadorContas().criar(inscricao));}
+	static void inicializarUsuarios(List<Usuario> usuarios) {
+		Usuario usuario1 = new AlunoDeGraduacao(123, "João da Silva");
+		usuarios.add(usuario1);
+		Usuario usuario2 = new AlunoDePosGraduacao(456, "Luiz Fernando Rodrigues");
+		usuarios.add(usuario2);
+		Usuario usuario3 = new AlunoDeGraduacao(789, "Pedro Paulo");
+		usuarios.add(usuario3);
+		Usuario usuario4 = new Professor(100, "Carlos Lucena");
+		usuarios.add(usuario4);
 	}
 	static void inicializarLivros(List<Livro> livros) {
 		Livro l10001 = new Livro(100, "Engenharia de Software", "Addison Wesley", "Ian Sommervile", "6ª", 2000, 1);

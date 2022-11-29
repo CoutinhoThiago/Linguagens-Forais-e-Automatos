@@ -20,4 +20,5 @@
     <fullyQualifiedTypeName name="biblioteca.item.Livro"/>
     <fullyQualifiedTypeName name="biblioteca.Emprestimo"/>
     <fullyQualifiedTypeName name="biblioteca.usuario.tipo.AlunoDeGraduacao"/>
+    <fullyQualifiedTypeName name="biblioteca.usuario.interfaces.ICriadorContas"/>
 </qualifiedTypeNameHistroy>

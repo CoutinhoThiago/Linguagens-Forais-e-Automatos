@@ -1,12 +1,11 @@
 package biblioteca.usuario.criador;
 
+import biblioteca.usuario.ICriadorContas;
 import biblioteca.usuario.Usuario;
-import biblioteca.usuario.interfaces.IInscricao;
-import biblioteca.usuario.interfaces.ICriadorContas;
 
 public class CriadorContasProfessor implements ICriadorContas {
     
-	public Usuario criar(IInscricao aluno)
+	public Usuario criar(Usuario aluno)
     {
         Usuario usuario = new Usuario();
 

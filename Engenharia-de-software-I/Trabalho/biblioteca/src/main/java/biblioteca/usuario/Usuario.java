@@ -6,9 +6,8 @@ import java.util.Random;
 import biblioteca.Emprestimo;
 import biblioteca.Reserva;
 import biblioteca.item.Livro;
-import biblioteca.usuario.interfaces.Fncionalidades;
 
-public class Usuario implements Fncionalidades {
+public class Usuario {
 	private int codigo = 0; // código do usuario para facilitar a busca
 	private String nome;
 	
@@ -22,11 +21,6 @@ public class Usuario implements Fncionalidades {
 	
 	public List<Reserva> listaDeReservas;
 	public List<Emprestimo> listaDeEmprestimos;
-	
-	public void pegarLivroEmprestado() {
-	}	
-	public void reservarLivro() {
-	}
 
 	public int getTempoDeImprestimo() {return tempoDeEmprestimo;}
 	public void setTempoDeEmprestimo(int tempoDeImprestimo) {this.tempoDeEmprestimo = tempoDeImprestimo;}
