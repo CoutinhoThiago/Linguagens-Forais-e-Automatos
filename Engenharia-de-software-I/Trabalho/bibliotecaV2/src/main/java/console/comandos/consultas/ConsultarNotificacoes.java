@@ -1,20 +1,17 @@
 package console.comandos.consultas;
 
-import biblioteca.item.Livro;
-import biblioteca.usuario.Usuario;
-import console.Comando;
+
+import biblioteca.Livro;
+import biblioteca.Usuario;
+import biblioteca.usuario.IUsuario;
+import console.comandos.Comando;
 
 public class ConsultarNotificacoes implements Comando { //Ex: "ntf"
-	@Override
-	public void executar(Usuario usuario, Livro livro) {}
-	@Override
-	public void consultarUsuario(Usuario usuario) {	
-	}
-	@Override
-	public void consultarLivro(Livro livro) {}
-	@Override
-	public void consultarNotificacoes(Usuario usuario) {
+//	@Override
+//	public void executar(IUsuario usuario, Livro livro) {}
+
+	public void executar(IUsuario usuario, Livro livro) {
 		// TODO Auto-generated method stub
 		
-	} 
+	}
 }

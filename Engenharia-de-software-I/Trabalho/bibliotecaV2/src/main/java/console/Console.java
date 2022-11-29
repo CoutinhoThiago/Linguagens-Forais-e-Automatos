@@ -3,20 +3,26 @@ package console;
 import java.util.List;
 import java.util.Scanner;
 
-import biblioteca.item.Livro;
-import biblioteca.item.estados.Disponivel;
-import biblioteca.usuario.Usuario;
-import console.comandos.Devolver;
-import console.comandos.PegarEmprestado;
-import console.comandos.RegistrarObservador;
-import console.comandos.Reservar;
+import biblioteca.Dados;
+import biblioteca.Livro;
+import biblioteca.usuario.IUsuario;
+import console.comandos.Comando;
+import console.comandos.basicos.Devolver;
+import console.comandos.basicos.PegarEmprestado;
+import console.comandos.basicos.RegistrarObservador;
+import console.comandos.basicos.Reservar;
 import console.comandos.consultas.ConsultarLivro;
 import console.comandos.consultas.ConsultarNotificacoes;
 import console.comandos.consultas.ConsultarUsuario;
 
 public class Console {
 	
-	public static void selecionarFuncionalidade(List<Usuario> usuarios, List<Livro> livros) {
+	public static void selecionarFuncionalidade() {
+		Dados dados = new Dados();
+		List<IUsuario> usuarios = dados.getListaDeUsuarios();
+		List<Livro> livros = dados.getListaDeLivros();
+		
+		
 		System.out.println("Bom dia, O que o senhor deseja fazer ?"); // 
 		System.out.println("Digite: " + "emp" + ", " + 
 				"o código do usuario" + "e" + 
@@ -41,7 +47,7 @@ public class Console {
 			else if (operacao.equals("emp") || operacao.equals("dev") || operacao.equals("res") || operacao.equals("obs") || operacao.equals("liv") || operacao.equals("usu") || operacao.equals("ntf")) {
 				int codigoDoUsuario = Integer.parseInt(entrada[1]);	//System.out.println(codigoDoUsuario);
 				int codigoDoLivro = Integer.parseInt(entrada[2]);	//System.out.println(codigoDoLivro);
-				Usuario usuario = Buscar.buscarUsuario(usuarios, codigoDoUsuario);
+				IUsuario usuario = Buscar.buscarUsuario(usuarios, codigoDoUsuario);
 				Livro livro = Buscar.buscarLivro(livros, codigoDoLivro);
 			
 				if (operacao.equals("emp")) {

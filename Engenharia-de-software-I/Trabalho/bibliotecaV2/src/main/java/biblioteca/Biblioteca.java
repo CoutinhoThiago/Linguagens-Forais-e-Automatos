@@ -2,20 +2,29 @@ package biblioteca;
 
 import java.util.List;
 
-import biblioteca.item.Livro;
-import biblioteca.item.estados.Disponivel;
-import biblioteca.usuario.Usuario;
+import biblioteca.itens.Emprestimo;
+import biblioteca.itens.Reserva;
+import biblioteca.livro.estado.Disponivel;
+import biblioteca.usuario.IUsuario;
+
 
 public class Biblioteca {
-
-	public Emprestimo pegarEmprestado(Usuario usuario, Livro livro) {
-		List<Reserva> reservas = usuario.listaDeReservas;
-		if (reservas.size() == 0) {
+	public Emprestimo pegarEmprestado(IUsuario usuario, Livro livro) {
+		
+		Dados dados = new Dados();
+		List<Livro> livros = dados.getListaDeLivros();
+		List<IUsuario> usuarios = dados.getListaDeUsuarios();
+		
+		List<Reserva> reservas = usuario.getListaDeReservas();
+		
+		if (reservas == null) {
 			System.out.println("O usuario não possui reservas para o livro");
-			boolean disponivel = consultarDisponibilidade();
+			Livro lista = consultarDisponibilidade(livros, livro);
 			
-			if (disponivel == true) {
+			if (lista != null) {
+				System.out.println("Livro Disponivel para emprestimo");
 				Emprestimo emprestimo = criarEmprestimo(000, usuario, livro);
+				System.out.println("Emprestimo realizado com sucesso");
 				return emprestimo;
 			}
 			else {
@@ -38,8 +47,16 @@ public class Biblioteca {
 		}
 		return null;
 	}
-	private boolean consultarDisponibilidade() {
-		return false;
+	private Livro consultarDisponibilidade(List<Livro> livros, Livro livro) {
+		for(int i = 0; i < livros.size(); i++){
+			if(livros.get(i).getCodigo() == livro.getCodigo()) {
+//					System.out.println(livros.get(i).getNome());
+				if (livros.get(i).estado instanceof Disponivel) {
+					return livros.get(i);
+				}
+			}
+		}
+		return null;
 	}
 	private Reserva localizarReserva(Livro livro, List<Reserva> reservas) {
 		for(int i = 0; i < reservas.size(); i++){
@@ -53,7 +70,8 @@ public class Biblioteca {
 		}
 		return null;
 	}
-	private Emprestimo criarEmprestimo(int codigo, Usuario usuario, Livro livro) {
+	private Emprestimo criarEmprestimo(int codigo, IUsuario usuario, Livro livro) {
+		System.out.println("Cadastrando novo emprestimo");
 		Emprestimo emprestimo = new Emprestimo(codigo, usuario, livro);
 		return emprestimo;
 	}
@@ -62,21 +80,21 @@ public class Biblioteca {
 	}
 	
 //--------------------//--------------------//--------------------//--------------------//--------------------//
-	public void reservar(Usuario usuario, Livro livro) {
+	public void reservar(IUsuario usuario, Livro livro) {
 		int codigo = 000;
 		Reserva reserva = criarReserva(codigo, usuario, livro);
-		List<Reserva> reservas = usuario.listaDeReservas;
+		List<Reserva> reservas = usuario.getListaDeReservas();
 		reservas.add(reserva);
 	}
 	
-	private Reserva criarReserva(int codigo, Usuario usuario, Livro livro) {
+	private Reserva criarReserva(int codigo, IUsuario usuario, Livro livro) {
 		Reserva reserva = new Reserva(codigo, usuario, livro);
 		return reserva;
 	}
 	 
-	public void devolver(Usuario usuario, Livro livro) {
-		Emprestimo emprestimo = localizarEmprestimo(livro, usuario.listaDeEmprestimos);
-		usuario.listaDeEmprestimos.remove(emprestimo);
+	public void devolver(IUsuario usuario, Livro livro) {
+		Emprestimo emprestimo = localizarEmprestimo(livro, usuario.getListaDeEmprestimos());
+		//usuario.listaDeEmprestimos.remove(emprestimo);
 	}
 	private Emprestimo localizarEmprestimo(Livro livro, List<Emprestimo> emprestimos) {
 		for(int i = 0; i < emprestimos.size(); i++){
@@ -89,13 +107,13 @@ public class Biblioteca {
 		return null;
 	}
 	
-	public void registrarObservador(Usuario usuario, Livro livro) {
+	public void registrarObservador(IUsuario usuario, Livro livro) {
 		
 	}
 
-	public void consultarUsuario(Usuario usuario) {}
+	public void consultarUsuario(IUsuario usuario) {}
 
 	public void consultarLivro(Livro livro) {}
 
-	public void consultarNotificacoes(Usuario usuario) {}
+	public void consultarNotificacoes(IUsuario usuario) {}
 }

@@ -3,12 +3,12 @@ package console;
 import java.util.List;
 import java.util.Scanner;
 
-import biblioteca.item.Livro;
-import biblioteca.item.estados.Disponivel;
-import biblioteca.usuario.Usuario;
+import biblioteca.Livro;
+import biblioteca.livro.estado.Disponivel;
+import biblioteca.usuario.IUsuario;
 
 public class Buscar {
-	static Usuario buscarUsuario(List<Usuario> usuarios, int codigoDoUsuario) {
+	static IUsuario buscarUsuario(List<IUsuario> usuarios, int codigoDoUsuario) {
 		for(int i = 0; i < usuarios.size(); i++){
 			System.out.println("buscando usuario...");
 			if(usuarios.get(i).getCodigo() == codigoDoUsuario) {
