@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="biblioteca.usuario.interfaces.IUsuario"/>
     <fullyQualifiedTypeName name="biblioteca.usuario.tipo.AlunoDePosGraduacao"/>
-    <fullyQualifiedTypeName name="biblioteca.usuario.tipo.Professor"/>
     <fullyQualifiedTypeName name="java.util.Random"/>
     <fullyQualifiedTypeName name="titulos.observados.Subject"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -15,10 +14,21 @@
     <fullyQualifiedTypeName name="console.comandos.consultas.ConsultarLivro"/>
     <fullyQualifiedTypeName name="console.comandos.consultas.ConsultarUsuario"/>
     <fullyQualifiedTypeName name="console.comandos.consultas.ConsultarNotificacoes"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="biblioteca.usuario.Usuario"/>
     <fullyQualifiedTypeName name="biblioteca.item.Livro"/>
     <fullyQualifiedTypeName name="biblioteca.Emprestimo"/>
     <fullyQualifiedTypeName name="biblioteca.usuario.tipo.AlunoDeGraduacao"/>
     <fullyQualifiedTypeName name="biblioteca.usuario.interfaces.ICriadorContas"/>
+    <fullyQualifiedTypeName name="console.comandos.Comando"/>
+    <fullyQualifiedTypeName name="biblioteca.livro.Observer"/>
+    <fullyQualifiedTypeName name="biblioteca.usuario.Observer"/>
+    <fullyQualifiedTypeName name="biblioteca.livro.Livro"/>
+    <fullyQualifiedTypeName name="biblioteca.usuario.IUsuario"/>
+    <fullyQualifiedTypeName name="biblioteca.usuario.tipo.Professor"/>
+    <fullyQualifiedTypeName name="biblioteca.livro.item.Emprestimo"/>
+    <fullyQualifiedTypeName name="biblioteca.livro.item.Reserva"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="biblioteca.livro.estado.Emprestado"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

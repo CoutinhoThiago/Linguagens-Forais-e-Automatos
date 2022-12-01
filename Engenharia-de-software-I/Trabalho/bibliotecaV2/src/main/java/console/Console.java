@@ -53,38 +53,38 @@ public class Console {
 			
 				if (operacao.equals("emp")) {
 					Comando comando = new PegarEmprestado();
-						comando.executar(usuario, livro);
+						comando.executar(usuario, livro, livros);
 				}
 				else if (operacao.equals("dev")) {
 					Comando comando = new Devolver();
-						comando.executar(usuario, livro);
+						comando.executar(usuario, livro, livros);
 				}
 				else if (operacao.equals("res")) {
 					Comando comando = new Reservar();
-						comando.executar(usuario, livro);
+						comando.executar(usuario, livro, livros);
 				}
 				else if (operacao.equals("obs")) {
 					Comando comando = new RegistrarObservador();
-						comando.executar(usuario, livro);
+						comando.executar(usuario, livro, livros);
 				}	
 			}
 			else if (operacao.equals("liv")) {
 				int codigoDoLivro = Integer.parseInt(entrada[1]);	//System.out.println(codigoDoLivro);
 				Livro livro = Buscar.buscarLivro(livros, codigoDoLivro);
 				Comando comando = new ConsultarLivro();
-					comando.executar(null, livro);
+					comando.executar(null, livro, livros);
 			}
 			else if (operacao.equals("usu")) {
 				int codigoDoUsuario = Integer.parseInt(entrada[1]);	//System.out.println(codigoDoUsuario);
 				IUsuario usuario = Buscar.buscarUsuario(usuarios, codigoDoUsuario);
 				Comando comando = new ConsultarUsuario();
-					comando.executar(usuario, null);
+					comando.executar(usuario, null, livros);
 			}
 			else if (operacao.equals("ntf")) {
 				int codigoDoUsuario = Integer.parseInt(entrada[1]);	//System.out.println(codigoDoUsuario);
 				IUsuario usuario = Buscar.buscarUsuario(usuarios, codigoDoUsuario);
 				Comando comando = new ConsultarNotificacoes();
-					comando.executar(usuario, null);
+					comando.executar(usuario, null, livros);
 			}	
 
 	

@@ -10,7 +10,7 @@ import biblioteca.usuario.Usuario;
 import console.comandos.Comando;
 
 public class ConsultarLivro implements Comando {
-	public void executar(IUsuario usuario, Livro livro) {
+	public void executar(IUsuario usuario, Livro livro, List<Livro> livros) {
 		new Biblioteca().consultarLivro(livro);
 	}
 }
