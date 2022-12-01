@@ -1,7 +1,5 @@
 package biblioteca.livro;
 
-import biblioteca.Livro;
-
 public interface Estado {
 	public void pegarEmprestado(Livro livro);
 	

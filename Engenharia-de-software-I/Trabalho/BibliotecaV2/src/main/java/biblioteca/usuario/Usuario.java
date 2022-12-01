@@ -1,15 +1,12 @@
-package biblioteca.usuario.tipo;
+package biblioteca.usuario;
 
 import java.util.List;
 
-import biblioteca.livro.Livro;
 import biblioteca.livro.item.Emprestimo;
 import biblioteca.livro.item.ItenObservado;
 import biblioteca.livro.item.Reserva;
-import biblioteca.usuario.IUsuario;
-import biblioteca.usuario.Observer;
 
-public class Professor implements IUsuario, Observer {
+public class Usuario implements IUsuario {
 	private int codigo;
 	private String nome;
 	
@@ -27,26 +24,14 @@ public class Professor implements IUsuario, Observer {
 	private List<Emprestimo> listaDeEmprestimosAntigos;
 	
 	private List<ItenObservado> listaDeItensObservados;
-
+	
 //----------//-----Construtor-----//----------//
-	public  Professor(int codigo, String nome) {
+	public Usuario(int codigo, String nome) {
 		this.codigo = codigo;
         this.nome= nome;
         
-        this.tempoDeImprestimo = 7; //7 dias
-        this.quantidadeDeItensReservados = 9999; // Sem limite de livros
-	}
-	
-//----------//-----Observer-----//----------//
-	public void update(Livro livro) {
-		System.out.println("Falta fazer");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        this.tempoDeImprestimo = 3; //3 dias
+        this.quantidadeDeItensReservados = 3; // 3 livros
 	}
 	
 //----------//-----Getter and setter-----//----------//	

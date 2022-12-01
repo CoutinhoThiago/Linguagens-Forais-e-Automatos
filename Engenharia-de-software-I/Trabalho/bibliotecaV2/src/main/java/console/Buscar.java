@@ -3,7 +3,7 @@ package console;
 import java.util.List;
 import java.util.Scanner;
 
-import biblioteca.Livro;
+import biblioteca.livro.Livro;
 import biblioteca.livro.estado.Disponivel;
 import biblioteca.usuario.IUsuario;
 

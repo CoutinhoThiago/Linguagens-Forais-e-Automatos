@@ -2,9 +2,9 @@ package biblioteca.usuario.tipo;
 
 import java.util.List;
 
-import biblioteca.itens.Emprestimo;
-import biblioteca.itens.ItenObservado;
-import biblioteca.itens.Reserva;
+import biblioteca.livro.item.Emprestimo;
+import biblioteca.livro.item.ItenObservado;
+import biblioteca.livro.item.Reserva;
 import biblioteca.usuario.IUsuario;
 
 public class AlunoDePosGraduacao implements IUsuario {
@@ -14,15 +14,19 @@ public class AlunoDePosGraduacao implements IUsuario {
 	private int tempoDeImprestimo;
 	private int quantidadeDeItensReservados;
 	
-	private boolean professor = false;
+	private boolean professor = true;
 	private boolean alunoDePosGraduacao = true;
 	
 	private boolean emAtraso;
 	
 	private List<Reserva> listaDeReservas;
-	private List<Emprestimo> listaDeEmprestimos;
+	
+	private List<Emprestimo> listaDeEmprestimosCorrentes;
+	private List<Emprestimo> listaDeEmprestimosAntigos;
+	
 	private List<ItenObservado> listaDeItensObservados;
 	
+//----------//-----Construtor-----//----------//
 	public AlunoDePosGraduacao(int codigo, String nome) {
 		this.codigo = codigo;
         this.nome= nome;
@@ -31,67 +35,27 @@ public class AlunoDePosGraduacao implements IUsuario {
         this.quantidadeDeItensReservados = 4; // 4 livros
 	}
 	
-	
-	public int getCodigo() {
-		return codigo;
-	}
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public int getTempoDeImprestimo() {
-		return tempoDeImprestimo;
-	}
-	public void setTempoDeImprestimo(int tempoDeImprestimo) {
-		this.tempoDeImprestimo = tempoDeImprestimo;
-	}
-	public int getQuantidadeDeItensReservados() {
-		return quantidadeDeItensReservados;
-	}
-	public void setQuantidadeDeItensReservados(int quantidadeDeItensReservados) {
-		this.quantidadeDeItensReservados = quantidadeDeItensReservados;
-	}
-	public boolean isAlunoDePosGraduacao() {
-		return alunoDePosGraduacao;
-	}
-
-	public void setAlunoDePosGraduacao(boolean alunoDePosGraduacao) {
-		this.alunoDePosGraduacao = alunoDePosGraduacao;
-	}
-	public boolean isProfessor() {
-		return professor;
-	}
-	public void setProfessor(boolean professor) {
-		this.professor = professor;
-	}
-	public boolean isEmAtraso() {
-		return emAtraso;
-	}
-	public void setEmAtraso(boolean emAtraso) {
-		this.emAtraso = emAtraso;
-	}
-	
-	public List<Reserva> getListaDeReservas() {
-		return listaDeReservas;
-	}
-	public void setListaDeReservas(List<Reserva> listaDeReservas) {
-		this.listaDeReservas = listaDeReservas;
-	}
-	public List<Emprestimo> getListaDeEmprestimos() {
-		return listaDeEmprestimos;
-	}
-	public void setListaDeEmprestimos(List<Emprestimo> listaDeEmprestimos) {
-		this.listaDeEmprestimos = listaDeEmprestimos;
-	}
-	public List<ItenObservado> getListaDeItensObservados() {
-		return listaDeItensObservados;
-	}
-	public void setListaDeItensObservados(List<ItenObservado> listaDeItensObservados) {
-		this.listaDeItensObservados = listaDeItensObservados;
-	}
+//----------//-----Getter and setter-----//----------//	
+	public int getCodigo() {return codigo;}
+	public void setCodigo(int codigo) {this.codigo = codigo;}
+	public String getNome() {return nome;}
+	public void setNome(String nome) {this.nome = nome;}
+	public int getTempoDeImprestimo() {return tempoDeImprestimo;}
+	public void setTempoDeImprestimo(int tempoDeImprestimo) {this.tempoDeImprestimo = tempoDeImprestimo;}
+	public int getQuantidadeDeItensReservados() {return quantidadeDeItensReservados;}
+	public void setQuantidadeDeItensReservados(int quantidadeDeItensReservados) {this.quantidadeDeItensReservados = quantidadeDeItensReservados;}
+	public boolean isAlunoDePosGraduacao() {return alunoDePosGraduacao;}
+	public void setAlunoDePosGraduacao(boolean alunoDePosGraduacao) {this.alunoDePosGraduacao = alunoDePosGraduacao;}
+	public boolean isProfessor() {return professor;}
+	public void setProfessor(boolean professor) {this.professor = professor;}
+	public boolean isEmAtraso() {return emAtraso;}
+	public void setEmAtraso(boolean emAtraso) {this.emAtraso = emAtraso;}
+	public List<Reserva> getListaDeReservas() {return listaDeReservas;}
+	public void setListaDeReservas(List<Reserva> listaDeReservas) {this.listaDeReservas = listaDeReservas;}
+	public List<Emprestimo> getListaDeEmprestimosCorrentes() {return listaDeEmprestimosCorrentes;}
+	public void setListaDeEmprestimosCorrentes(List<Emprestimo> listaDeEmprestimosCorrentes) {this.listaDeEmprestimosCorrentes = listaDeEmprestimosCorrentes;}
+	public List<Emprestimo> getListaDeEmprestimosAntigos() {return listaDeEmprestimosAntigos;}
+	public void setListaDeEmprestimosAntigos(List<Emprestimo> listaDeEmprestimosAntigos) {this.listaDeEmprestimosAntigos = listaDeEmprestimosAntigos;}
+	public List<ItenObservado> getListaDeItensObservados() {return listaDeItensObservados;}
+	public void setListaDeItensObservados(List<ItenObservado> listaDeItensObservados) {this.listaDeItensObservados = listaDeItensObservados;}
 }

@@ -1,7 +1,7 @@
 package biblioteca.livro.estado;
 
-import biblioteca.Livro;
 import biblioteca.livro.Estado;
+import biblioteca.livro.Livro;
 
 public class Disponivel implements Estado {
 	public void pegarEmprestado(Livro livro) {

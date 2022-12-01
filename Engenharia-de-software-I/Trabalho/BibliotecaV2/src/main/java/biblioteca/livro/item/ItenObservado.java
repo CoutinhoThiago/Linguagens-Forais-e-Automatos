@@ -1,4 +1,4 @@
-package biblioteca.itens;
+package biblioteca.livro.item;
 
 public class ItenObservado {
 

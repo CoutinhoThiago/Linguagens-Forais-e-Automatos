@@ -2,9 +2,11 @@ package biblioteca;
 
 import java.util.List;
 
-import biblioteca.itens.Emprestimo;
-import biblioteca.itens.Reserva;
+import biblioteca.livro.Livro;
 import biblioteca.livro.estado.Disponivel;
+import biblioteca.livro.estado.Emprestado;
+import biblioteca.livro.item.Emprestimo;
+import biblioteca.livro.item.Reserva;
 import biblioteca.usuario.IUsuario;
 
 
@@ -19,9 +21,9 @@ public class Biblioteca {
 		
 		if (reservas == null) {
 			System.out.println("O usuario não possui reservas para o livro");
-			Livro lista = consultarDisponibilidade(livros, livro);
+			Livro listaDeLivros = consultarDisponibilidade(livros, livro);
 			
-			if (lista != null) {
+			if (listaDeLivros != null) {
 				System.out.println("Livro Disponivel para emprestimo");
 				Emprestimo emprestimo = criarEmprestimo(000, usuario, livro);
 				System.out.println("Emprestimo realizado com sucesso");
@@ -73,27 +75,24 @@ public class Biblioteca {
 	private Emprestimo criarEmprestimo(int codigo, IUsuario usuario, Livro livro) {
 		System.out.println("Cadastrando novo emprestimo");
 		Emprestimo emprestimo = new Emprestimo(codigo, usuario, livro);
+		System.out.println("Emprestimo cadastrado com sucesso");
 		return emprestimo;
 	}
 	private void excluirReserva(List<Reserva> reservas, Reserva reserva) {
 		reservas.remove(reserva);
+		System.out.println("Reserva excluida com sucesso");
 	}
 	
 //--------------------//--------------------//--------------------//--------------------//--------------------//
 	public void reservar(IUsuario usuario, Livro livro) {
 		int codigo = 000;
-		Reserva reserva = criarReserva(codigo, usuario, livro);
+		Reserva reserva = new Reserva(codigo, usuario, livro);
 		List<Reserva> reservas = usuario.getListaDeReservas();
 		reservas.add(reserva);
 	}
-	
-	private Reserva criarReserva(int codigo, IUsuario usuario, Livro livro) {
-		Reserva reserva = new Reserva(codigo, usuario, livro);
-		return reserva;
-	}
 	 
 	public void devolver(IUsuario usuario, Livro livro) {
-		Emprestimo emprestimo = localizarEmprestimo(livro, usuario.getListaDeEmprestimos());
+		Emprestimo emprestimo = localizarEmprestimo(livro, usuario.getListaDeEmprestimosCorrentes());
 		//usuario.listaDeEmprestimos.remove(emprestimo);
 	}
 	private Emprestimo localizarEmprestimo(Livro livro, List<Emprestimo> emprestimos) {
@@ -113,7 +112,46 @@ public class Biblioteca {
 
 	public void consultarUsuario(IUsuario usuario) {}
 
-	public void consultarLivro(Livro livro) {}
+	public void consultarLivro(Livro livro) {
+//		o sistema deve apresentar suas informações da seguinte
+	//	forma: (i) título, (ii) quantidade de reservas para aquele livro, e, se diferente de zero,
+	//	devem ser também apresentados o nome dos usuários que realizaram cada reserva, (iii)
+	//	para cada exemplar, deve ser apresentado seu código, seu status (disponível ou
+	//	emprestado), e em caso do exemplar estar emprestado deverá ser exibido o nome do
+	//	usuário que realizou o empréstimo, a data de empréstimo e a data prevista para
+	//	devolução. Para solicitar tal consulta, o usuário deverá digitar o comando “liv”, seguido
+	//	do código do livro.
+		
+		System.out.println("Título" + livro.getNome());
+		int quantidadeDeReservas = livro.getQuantidadeDeReservas();
+		System.out.println("Quantidade de reservas: " + quantidadeDeReservas);
+		if (quantidadeDeReservas == 0) {
+			//devem ser também apresentados o nome dos usuários que realizaram cada reserva
+			System.out.println("IMPLEMENTAR");
+		}
+	
+		boolean emprestado = livro.estado instanceof Emprestado;
+		System.out.println("Status: " + emprestado);
+		//e em caso do exemplar estar emprestado deverá ser exibido
+		if (emprestado == true) {
+			//o nome do usuário que realizou o empréstimo
+			//a data de empréstimo e a data prevista para devolução. 
+		}
+	}
+	
+//	List<Emprestimo> listaDeEmprestimos = usuario.
+//	//lista de todos os seus empréstimos correntes
+//	if(listaDeLivros.size() >=0) {
+//		System.out.println("Emprestimos Correntes");
+//		for (int i = 0; i < listaDeEmprestimoCorrentes.size(); i++) {
+//			System.out.println("Emprestimo n" + listaDeEmprestimoCorrentes.get(i).getCodigo());
+//			System.out.println("Nome " + listaDeEmprestimoCorrentes.get(i).getLivro().getNome());
+//			System.out.println("Data de emprestimo " + listaDeEmprestimoCorrentes.get(i).getDataDeEmprestimo());
+//			System.out.println("Status " + listaDeEmprestimoCorrentes.get(i).getStatus());
+//			System.out.println("Data de devolução prevista " + listaDeEmprestimoCorrentes.get(i).getDataDeDevolucaoPrevista());
+//		}
+//	}
+//}
 
 	public void consultarNotificacoes(IUsuario usuario) {}
 }

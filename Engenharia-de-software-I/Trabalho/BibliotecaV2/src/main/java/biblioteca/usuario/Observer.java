@@ -1,6 +1,6 @@
-package biblioteca.livro;
+package biblioteca.usuario;
 
-import biblioteca.Livro;
+import biblioteca.livro.Livro;
 
 public interface Observer {
 	public void update(Livro livro);

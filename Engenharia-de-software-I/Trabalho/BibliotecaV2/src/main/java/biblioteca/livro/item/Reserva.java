@@ -1,15 +1,14 @@
-package biblioteca.itens;
+package biblioteca.livro.item;
 
-import biblioteca.Livro;
-import biblioteca.Usuario;
+import biblioteca.livro.Livro;
 import biblioteca.usuario.IUsuario;
 
-public class Emprestimo {
+public class Reserva {
 	private int codigo;
 	private IUsuario usuario;
 	private Livro livro;
 	
-	public Emprestimo(int codigo, IUsuario usuario, Livro livro) {
+	public Reserva(int codigo, IUsuario usuario, Livro livro) {
 		this.setCodigo(codigo);
 		this.setUsuario(usuario);
 		this.setLivro(livro);

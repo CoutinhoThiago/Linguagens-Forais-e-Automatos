@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import biblioteca.Dados;
-import biblioteca.Livro;
-import biblioteca.Usuario;
+import biblioteca.livro.Livro;
 import biblioteca.usuario.IUsuario;
+import biblioteca.usuario.Usuario;
 import console.Console;
 
 public class test {

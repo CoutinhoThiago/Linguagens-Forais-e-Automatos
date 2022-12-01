@@ -2,9 +2,9 @@ package biblioteca.usuario;
 
 import java.util.List;
 
-import biblioteca.itens.Emprestimo;
-import biblioteca.itens.ItenObservado;
-import biblioteca.itens.Reserva;
+import biblioteca.livro.item.Emprestimo;
+import biblioteca.livro.item.ItenObservado;
+import biblioteca.livro.item.Reserva;
 
 public interface IUsuario {
 	public int getCodigo();
@@ -24,8 +24,13 @@ public interface IUsuario {
 
 	public List<Reserva> getListaDeReservas();
 	public void setListaDeReservas(List<Reserva> listaDeReservas);
-	public List<Emprestimo> getListaDeEmprestimos();
-	public void setListaDeEmprestimos(List<Emprestimo> listaDeEmprestimos);
+	
+	public List<Emprestimo> getListaDeEmprestimosCorrentes();
+	public void setListaDeEmprestimosCorrentes(List<Emprestimo> listaDeEmprestimosCorrentes);
+	public List<Emprestimo> getListaDeEmprestimosAntigos();
+	public void setListaDeEmprestimosAntigos(List<Emprestimo> listaDeEmprestimosAntigos);
+	
 	public List<ItenObservado> getListaDeItensObservados();
 	public void setListaDeItensObservados(List<ItenObservado> listaDeItensObservados);
+
 }
