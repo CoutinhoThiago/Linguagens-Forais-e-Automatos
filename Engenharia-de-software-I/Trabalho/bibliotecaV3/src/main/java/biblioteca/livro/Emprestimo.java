@@ -7,6 +7,8 @@ import biblioteca.usuario.Professor;
 public class Emprestimo {
 	private int codigo;
 	private Professor usuario;
+	private Livro livro;
+	private Exemplar exemplar;
 		
 	private LocalDate dataDeEmprestimo;
 	
@@ -14,10 +16,13 @@ public class Emprestimo {
 	private LocalDate dataDeDevolucao;
 		
 //----------//-----Construtor-----//----------//
-	public Emprestimo(Professor usuario) {
-		this.setUsuario(usuario);
+	public Emprestimo(Professor usuario, Livro livro, Exemplar exemplar) {
+		this.usuario = (usuario);
+		this.livro = (livro);
+		this.exemplar = exemplar;
 			
 		this.setDataDeEmprestimo(LocalDate.now());
+		this.setDataDeDevolucaoPrevista(LocalDate.now());
 	}
 
 //----------//-----Getter and setter-----//----------//
@@ -59,5 +64,13 @@ public class Emprestimo {
 
 	public void setDataDeDevolucaoPrevista(LocalDate dataDeDevolucaoPrevista) {
 		this.dataDeDevolucaoPrevista = dataDeDevolucaoPrevista;
+	}
+
+	public Livro getLivro() {
+		return livro;
+	}
+
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
 }

@@ -1,5 +1,6 @@
 package biblioteca.livro;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Exemplar {
@@ -21,6 +22,9 @@ public class Exemplar {
 		this.setDisponivel(true);
 		this.setEmprestado(false);
 		this.setReservado(false);
+		
+		this.listaDeEmprestimosAntigos = new ArrayList<Emprestimo>();
+		this.listaDeReservaAntigas = new ArrayList<Reserva>();
 	}
 	public int getCodigoDoExemplar() {return codigoDoExemplar;}
 	public void setCodigoDoExemplar(int codigoDoExemplar) {this.codigoDoExemplar = codigoDoExemplar;}
@@ -55,6 +59,9 @@ public class Exemplar {
 	}
 	public void setListaDeEmprestimosAntigos(List<Emprestimo> listaDeEmprestimosAntigos) {
 		this.listaDeEmprestimosAntigos = listaDeEmprestimosAntigos;
+	}
+	public void addListaDeEmprestimosAntigos(Emprestimo emprestimo) {
+		this.listaDeEmprestimosAntigos.add(emprestimo);
 	}
 	public Reserva getReservaCorrente() {
 		return reservaCorrente;

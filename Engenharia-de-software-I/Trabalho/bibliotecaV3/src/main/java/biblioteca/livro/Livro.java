@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Livro {
+import biblioteca.usuario.Observer;
+
+public class Livro implements Subject{
 	private int codigo;
 	private String nome;
 	private String editora;
@@ -16,7 +18,7 @@ public class Livro {
 	
 	private List<Exemplar> exemplares = new ArrayList<Exemplar>();
 	private List<Reserva> listaDeReservas;
-	//private ArrayList<Observer> observers;
+	private ArrayList<Observer> observers;
 	
 //----------//-----Construtor-----//----------//
 	public Livro(int codigo, String nome, String editora, String autor, String Edicao, int anoDePublicacao) {
@@ -29,49 +31,29 @@ public class Livro {
 		this.anoDePublicacao = anoDePublicacao;
 		
 		this.quantidadeDeReservas = 0;
-	}
-	
-//----------//-----Singleton-----//----------//
-	public void pegarEmprestado(Livro livro) {
-		System.out.println("Consultando seu cadastro");
-		//if(usuario is not em atraso ) {}
-		System.out.println("Consultando disponibilidade");
-		//if(usuario is not emprestado ) {}
-		System.out.println("Consultando reservas");
-		//if(usuario is not reservado ) {}
-		System.out.println("Cadasteando registro de novo emprestimo");
-//		livro.estado= new Emprestado();
-	}
-	public void Devolver(Livro livro) {
-		System.out.println("Vc deseja doar um exemplar ?");
-	}
-	public void Reservar(Livro livro) {
-		System.out.println("Consultando sistema");
-		System.out.println("Reservando");
-//		livro.estado= new Reservado();
+		
+		observers = new ArrayList<Observer>();
 	}
 	
 //----------//-----Observer-----//----------//
-//	public void registerObserver(Observer observador) {
-//		observers.add(observador);
-//		
-//		//Sysout lista de observadores cadastrados para o livro
-//		for (int i = 0; i < observers.size(); i++) {
-//			Observer observer = observers.get(i);
-//			Professor professor = (Professor) observer;
-//			System.out.println(professor.getNome());
-//		}
-//	}
-//	public void removeObserver(Observer observador) {
-//		int i = observers.indexOf(observador);
-//		if (i >= 0) {observers.remove(i);}
-//	}
-//	public void notifyObservers() {
-//		for (int i = 0; i < observers.size(); i++) {
-//			Observer observer = observers.get(i);
-//			observer.update(this);
-//		}
-//	}
+	public void registerObserver(Observer observador) {
+		observers.add(observador);
+	}
+	public void removeObserver(Observer o) {
+		int i = observers.indexOf(o);
+		if (i >= 0) {
+			observers.remove(i);
+		}
+	}
+	public void notifyObservers(int quantidadeDeReservas) {
+		for (int i = 0; i < observers.size(); i++) {
+			Observer observer = observers.get(i);
+			observer.update(this);
+		}
+	}
+	public void measurementsChanged(int quantidadeDeReservas) {
+		this.notifyObservers(quantidadeDeReservas);
+	}
 
 //----------//-----Getter and setter-----//----------//
 	public String getNome() {return nome;}
@@ -92,7 +74,10 @@ public class Livro {
 	public void addExemplar(Exemplar exemplar) {this.exemplares.add(exemplar);}
 	
 	public int getQuantidadeDeReservas() {return quantidadeDeReservas;}
-	public void setQuantidadeDeReservas(int quantidadeDeReservas) {this.quantidadeDeReservas = quantidadeDeReservas;}
+	public void setQuantidadeDeReservas(int quantidadeDeReservas) {
+		this.quantidadeDeReservas = quantidadeDeReservas;
+		this.measurementsChanged(quantidadeDeReservas);
+	}
 	
 	//public Estado getEstado() {return estado;}
 	

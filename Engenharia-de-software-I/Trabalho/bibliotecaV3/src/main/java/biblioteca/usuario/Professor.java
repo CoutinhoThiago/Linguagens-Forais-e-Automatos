@@ -1,10 +1,14 @@
 package biblioteca.usuario;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import biblioteca.livro.Emprestimo;
+import biblioteca.livro.Exemplar;
 import biblioteca.livro.Livro;
+import biblioteca.livro.Reserva;
 
-public class Professor {
+public class Professor implements Observer{
 	private int codigo;
 	private String nome;
 	
@@ -14,11 +18,12 @@ public class Professor {
 	private boolean professor = true;
 	private boolean alunoDePosGraduacao = true;
 	
-	private boolean emAtraso;
-	
 	private int notificacoes;
 	
-	//private List<ItenObservado> listaDeItensObservados;
+	private List<Emprestimo> emprestimosCorrentes;
+	private List<Emprestimo> emprestimosAntigos;
+	
+	private List<Reserva> reservas;
 
 //----------//-----Construtor-----//----------//
 	public  Professor(int codigo, String nome) {
@@ -28,18 +33,20 @@ public class Professor {
         this.tempoDeImprestimo = 7; //7 dias
         this.quantidadeDeItensReservados = 9999; // Sem limite de livros
         this.setNotificacoes(0);
+        
+        this.emprestimosCorrentes = new ArrayList<Emprestimo>();
+    	this.emprestimosAntigos = new ArrayList<Emprestimo>();
+    	this.reservas = new ArrayList<Reserva>();
 	}
 	
 //----------//-----Observer-----//----------//
 	public void update(Livro livro) {
-		System.out.println("Falta fazer");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println("Va fazer essa porraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		if(livro.getQuantidadeDeReservas() > 1) {
+			int q = this.getNotificacoes();
+			this.setNotificacoes(q+1);
+			
+			//System.out.println(this.getNotificacoes());
+		}
 	}
 	
 //----------//-----Getter and setter-----//----------//	
@@ -55,9 +62,38 @@ public class Professor {
 	public void setAlunoDePosGraduacao(boolean alunoDePosGraduacao) {this.alunoDePosGraduacao = alunoDePosGraduacao;}
 	public boolean isProfessor() {return professor;}
 	public void setProfessor(boolean professor) {this.professor = professor;}
-	public boolean isEmAtraso() {return emAtraso;}
-	public void setEmAtraso(boolean emAtraso) {this.emAtraso = emAtraso;}
 
 	public int getNotificacoes() {return notificacoes;}
 	public void setNotificacoes(int notificacoes) {this.notificacoes = notificacoes;}
+
+	public List<Emprestimo> getEmprestimosCorrentes() {
+		return emprestimosCorrentes;
+	}
+	public void setEmprestimosCorrentes(List<Emprestimo> emprestimosCorrentes) {
+		this.emprestimosCorrentes = emprestimosCorrentes;
+	}
+	public void addEmprestimosCorrentes(Emprestimo emprestimo) {
+		emprestimosCorrentes.add(emprestimo);
+	}
+
+	public List<Emprestimo> getEmprestimosAntigos() {
+		return emprestimosAntigos;
+	}
+	public void setEmprestimosAntigos(List<Emprestimo> emprestimosAntigos) {
+		this.emprestimosAntigos = emprestimosAntigos;
+	}
+	
+	public void addEmprestimosAntigos(Emprestimo emprestimo) {
+		emprestimosAntigos.add(emprestimo);
+	}
+
+	public List<Reserva> getReservas() {
+		return reservas;
+	}
+	public void setReservas(List<Reserva> reservas) {
+		this.reservas = reservas;
+	}
+	public void addReservas(Reserva reserva) {
+		reservas.add(reserva);
+	}
 }
