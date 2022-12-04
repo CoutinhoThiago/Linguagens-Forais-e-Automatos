@@ -4,7 +4,6 @@ import java.util.List;
 
 import biblioteca.livro.item.Emprestimo;
 import biblioteca.livro.item.ItenObservado;
-import biblioteca.livro.item.Reserva;
 
 public interface IUsuario {
 	public int getCodigo();
@@ -21,9 +20,6 @@ public interface IUsuario {
 	public void setProfessor(boolean professor);
 	public boolean isEmAtraso();
 	public void setEmAtraso(boolean emAtraso);
-
-	public List<Reserva> getListaDeReservas();
-	public void setListaDeReservas(List<Reserva> listaDeReservas);
 	
 	public List<Emprestimo> getListaDeEmprestimosCorrentes();
 	public void setListaDeEmprestimosCorrentes(List<Emprestimo> listaDeEmprestimosCorrentes);
@@ -32,5 +28,4 @@ public interface IUsuario {
 	
 	public List<ItenObservado> getListaDeItensObservados();
 	public void setListaDeItensObservados(List<ItenObservado> listaDeItensObservados);
-
 }

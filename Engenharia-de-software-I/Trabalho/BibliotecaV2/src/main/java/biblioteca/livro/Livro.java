@@ -1,12 +1,14 @@
 package biblioteca.livro;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import biblioteca.livro.estado.Disponivel;
 import biblioteca.livro.estado.Emprestado;
 import biblioteca.livro.estado.Reservado;
 import biblioteca.livro.item.Emprestimo;
+import biblioteca.livro.item.Reserva;
 import biblioteca.usuario.IUsuario;
 import biblioteca.usuario.Observer;
 import biblioteca.usuario.Usuario;
@@ -24,6 +26,7 @@ public class Livro implements Subject {
 	private int quantidadeDeReservas;
 	
 	private ArrayList<Observer> observers;
+	private List<Reserva> listaDeReservas;
 	
 	public Estado estado;
 	
@@ -110,4 +113,7 @@ public class Livro implements Subject {
 	public void setQuantidadeDeReservas(int quantidadeDeReservas) {this.quantidadeDeReservas = quantidadeDeReservas;}
 	
 	//public Estado getEstado() {return estado;}
+	
+	public List<Reserva> getListaDeReservas() {return listaDeReservas;}
+	public void setListaDeReservas(List<Reserva> listaDeReservas) {this.listaDeReservas = listaDeReservas;}
 }

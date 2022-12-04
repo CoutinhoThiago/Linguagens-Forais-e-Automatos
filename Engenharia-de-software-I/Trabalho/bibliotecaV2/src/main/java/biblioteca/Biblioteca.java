@@ -8,16 +8,15 @@ import biblioteca.livro.estado.Emprestado;
 import biblioteca.livro.item.Emprestimo;
 import biblioteca.livro.item.Reserva;
 import biblioteca.usuario.IUsuario;
+import biblioteca.usuario.tipo.Professor;
 
 
 public class Biblioteca {
-	public Emprestimo pegarEmprestado(IUsuario usuario, Livro livro) {
-		
-		Dados dados = new Dados();
+	public Emprestimo pegarEmprestado(Dados dados, IUsuario usuario, Livro livro) {
 		List<Livro> livros = dados.getListaDeLivros();
 		List<IUsuario> usuarios = dados.getListaDeUsuarios();
 		
-		List<Reserva> reservas = usuario.getListaDeReservas();
+		List<Reserva> reservas = livro.getListaDeReservas();
 		
 		if (reservas == null) {
 			System.out.println("O usuario não possui reservas para o livro");
@@ -87,8 +86,11 @@ public class Biblioteca {
 	public void reservar(IUsuario usuario, Livro livro) {
 		int codigo = 000;
 		Reserva reserva = new Reserva(codigo, usuario, livro);
-		List<Reserva> reservas = usuario.getListaDeReservas();
+		List<Reserva> reservas = livro.getListaDeReservas();
 		reservas.add(reserva);
+		livro.setListaDeReservas(reservas);
+		
+		System.out.println(reservas);
 	}
 	 
 	public void devolver(IUsuario usuario, Livro livro) {
@@ -110,7 +112,7 @@ public class Biblioteca {
 		
 	}
 
-	public void consultarUsuario(IUsuario usuario) {
+	public void consultarUsuario(IUsuario usuario, Livro livro) {
 		List<Emprestimo> listaDeEmprestimoCorrentes = usuario.getListaDeEmprestimosCorrentes();
 		//lista de todos os seus empréstimos correntes
 		if(listaDeEmprestimoCorrentes.size() >=0) {
@@ -135,7 +137,7 @@ public class Biblioteca {
 				System.out.println("Data de devolução prevista " + listaDeEmprestimosAntigos.get(i).getDataDeDevolucao());
 			}
 		}
-		List<Reserva> listaDeReservas = usuario.getListaDeReservas();
+		List<Reserva> listaDeReservas = livro.getListaDeReservas();
 		//lista de todos as suas reservas
 		if(listaDeReservas.size() >=0) {
 			System.out.println("Reservas Antigas");
@@ -148,22 +150,35 @@ public class Biblioteca {
 		}
 	}
 
-	public void consultarLivro(Livro livro) {
-//		o sistema deve apresentar suas informações da seguinte
-	//	forma: (i) título, (ii) quantidade de reservas para aquele livro, e, se diferente de zero,
-	//	devem ser também apresentados o nome dos usuários que realizaram cada reserva, (iii)
-	//	para cada exemplar, deve ser apresentado seu código, seu status (disponível ou
+	public void consultarLivro(Livro livro, List<Livro> exemplares) {
+	//  (iii)	para cada exemplar, deve ser apresentado seu código, seu status (disponível ou
 	//	emprestado), e em caso do exemplar estar emprestado deverá ser exibido o nome do
 	//	usuário que realizou o empréstimo, a data de empréstimo e a data prevista para
 	//	devolução. Para solicitar tal consulta, o usuário deverá digitar o comando “liv”, seguido
 	//	do código do livro.
 		
-		System.out.println("Título" + livro.getNome());
+		System.out.println("Título" + livro.getNome()); //(i) título
 		int quantidadeDeReservas = livro.getQuantidadeDeReservas();
-		System.out.println("Quantidade de reservas: " + quantidadeDeReservas);
 		if (quantidadeDeReservas == 0) {
-			//devem ser também apresentados o nome dos usuários que realizaram cada reserva
-			System.out.println("IMPLEMENTAR");
+			System.out.println("Não existem reservas par o livro ");
+		}
+		else { //se diferente de zero, devem ser também apresentados o nome dos usuários que realizaram cada reserva
+			System.out.println( //(ii) quantidade de reservas para aquele livro
+					"Foram feitas " + livro.getQuantidadeDeReservas() + 
+					" reservas para esse livro"
+					);
+			List<Reserva> reservas = livro.getListaDeReservas();
+			System.out.println("O Livro foi reservado pelos usuarios:");
+			for(int i = 0; i < reservas.size(); i++){
+				System.out.println(" - " + reservas.get(i).getUsuario().getNome());
+			}
+			for(int i = 0; i < exemplares.size(); i++){
+				System.out.println(
+						"Foram feitas " + exemplares.get(i).getQuantidadeDeReservas() + " " +
+						"reservas par o exemplar " + i + " " + 
+						"do livro " + livro.getNome()
+						);
+			}
 		}
 	
 		boolean emprestado = livro.estado instanceof Emprestado;
@@ -189,5 +204,13 @@ public class Biblioteca {
 //	}
 //}
 
-	public void consultarNotificacoes(IUsuario usuario) {}
+	public void consultarNotificacoes(IUsuario usuario) {
+		if (usuario.isProfessor() == true) {
+			Professor professor = (Professor)usuario;
+			System.out.println(
+					"O professor " + usuario.getNome() + 
+					"foi notificado " + professor.getNotificacoes() + " Vezes"
+					);
+		}
+	}
 }

@@ -49,48 +49,49 @@ public class Console {
 				int codigoDoLivro = Integer.parseInt(entrada[2]);	//System.out.println(codigoDoLivro);
 				IUsuario usuario = Buscar.buscarUsuario(usuarios, codigoDoUsuario);
 				Livro livro = Buscar.buscarLivro(livros, codigoDoLivro);
-				//List<Livro> listaDeLivro
+				List<Livro> listaDeLivro = Buscar.buscarExemplares(livros, codigoDoLivro);
 			
 				if (operacao.equals("emp")) {
 					Comando comando = new PegarEmprestado();
-						comando.executar(usuario, livro, livros);
+						comando.executar(dados, usuario, livro, livros);
 				}
 				else if (operacao.equals("dev")) {
 					Comando comando = new Devolver();
-						comando.executar(usuario, livro, livros);
+						comando.executar(dados, usuario, livro, livros);
 				}
 				else if (operacao.equals("res")) {
 					Comando comando = new Reservar();
-						comando.executar(usuario, livro, livros);
+						comando.executar(dados, usuario, livro, livros);
 				}
 				else if (operacao.equals("obs")) {
 					Comando comando = new RegistrarObservador();
-						comando.executar(usuario, livro, livros);
+						comando.executar(dados, usuario, livro, livros);
 				}	
 			}
 			else if (operacao.equals("liv")) {
 				int codigoDoLivro = Integer.parseInt(entrada[1]);	//System.out.println(codigoDoLivro);
 				Livro livro = Buscar.buscarLivro(livros, codigoDoLivro);
+				List<Livro> exemplares = Buscar.buscarExemplares(livros, codigoDoLivro);
 				Comando comando = new ConsultarLivro();
-					comando.executar(null, livro, livros);
+					comando.executar(dados, null, livro, exemplares);
 			}
 			else if (operacao.equals("usu")) {
 				int codigoDoUsuario = Integer.parseInt(entrada[1]);	//System.out.println(codigoDoUsuario);
 				IUsuario usuario = Buscar.buscarUsuario(usuarios, codigoDoUsuario);
 				Comando comando = new ConsultarUsuario();
-					comando.executar(usuario, null, livros);
+					comando.executar(dados, usuario, null, livros);
 			}
 			else if (operacao.equals("ntf")) {
 				int codigoDoUsuario = Integer.parseInt(entrada[1]);	//System.out.println(codigoDoUsuario);
 				IUsuario usuario = Buscar.buscarUsuario(usuarios, codigoDoUsuario);
 				Comando comando = new ConsultarNotificacoes();
-					comando.executar(usuario, null, livros);
+					comando.executar(dados, usuario, null, livros);
 			}	
 
 	
 			else {
-				System.out.println("Digite um comando valido ou sai para encerrar o programa");
-				System.out.println(operacao);
+				System.out.println(operacao + " não é um comando valido");
+				System.out.println("Por favor digite um comando valido ou sai para encerrar o programa");
 			}
 		}
 	}

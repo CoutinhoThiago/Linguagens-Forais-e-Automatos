@@ -1,5 +1,6 @@
 package console;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -30,9 +31,7 @@ public class Buscar {
 			System.out.println("buscando livro...");
 			if(livros.get(i).getCodigo() == codigoDoLivro) {
 //				System.out.println(livros.get(i).getNome());
-				if (livros.get(i).estado instanceof Disponivel) {
-					return livros.get(i);
-				}
+				consultarDisponibilidade(livros, i);
 			}
 		    else {
 		    	if (i >= livros.size()-1) {
@@ -42,5 +41,23 @@ public class Buscar {
 		    }
 		}
 		return null;
+	}
+
+	private static Livro consultarDisponibilidade(List<Livro> livros, int i) {
+		if (livros.get(i).estado instanceof Disponivel) {
+			return livros.get(i);
+		}
+		return null;
+	}
+
+	public static List<Livro> buscarExemplares(List<Livro> livros, int codigoDoLivro) {
+		List<Livro> exemplares = new ArrayList<Livro>();
+		for(int i = 0; i < livros.size(); i++){
+			System.out.println("buscando livro...");
+			if(livros.get(i).getCodigo() == codigoDoLivro) {
+				exemplares.add(livros.get(i));
+			}
+		}
+		return exemplares;
 	}
 }

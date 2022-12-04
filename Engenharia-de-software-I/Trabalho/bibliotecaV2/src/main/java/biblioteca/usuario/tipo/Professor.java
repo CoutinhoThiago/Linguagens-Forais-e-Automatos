@@ -21,7 +21,7 @@ public class Professor implements IUsuario, Observer {
 	
 	private boolean emAtraso;
 	
-	private List<Reserva> listaDeReservas;
+	private int notificacoes;
 	
 	private List<Emprestimo> listaDeEmprestimosCorrentes;
 	private List<Emprestimo> listaDeEmprestimosAntigos;
@@ -35,6 +35,7 @@ public class Professor implements IUsuario, Observer {
         
         this.tempoDeImprestimo = 7; //7 dias
         this.quantidadeDeItensReservados = 9999; // Sem limite de livros
+        this.setNotificacoes(0);
 	}
 	
 //----------//-----Observer-----//----------//
@@ -64,12 +65,13 @@ public class Professor implements IUsuario, Observer {
 	public void setProfessor(boolean professor) {this.professor = professor;}
 	public boolean isEmAtraso() {return emAtraso;}
 	public void setEmAtraso(boolean emAtraso) {this.emAtraso = emAtraso;}
-	public List<Reserva> getListaDeReservas() {return listaDeReservas;}
-	public void setListaDeReservas(List<Reserva> listaDeReservas) {this.listaDeReservas = listaDeReservas;}
 	public List<Emprestimo> getListaDeEmprestimosCorrentes() {return listaDeEmprestimosCorrentes;}
 	public void setListaDeEmprestimosCorrentes(List<Emprestimo> listaDeEmprestimosCorrentes) {this.listaDeEmprestimosCorrentes = listaDeEmprestimosCorrentes;}
 	public List<Emprestimo> getListaDeEmprestimosAntigos() {return listaDeEmprestimosAntigos;}
 	public void setListaDeEmprestimosAntigos(List<Emprestimo> listaDeEmprestimosAntigos) {this.listaDeEmprestimosAntigos = listaDeEmprestimosAntigos;}
 	public List<ItenObservado> getListaDeItensObservados() {return listaDeItensObservados;}
 	public void setListaDeItensObservados(List<ItenObservado> listaDeItensObservados) {this.listaDeItensObservados = listaDeItensObservados;}
+
+	public int getNotificacoes() {return notificacoes;}
+	public void setNotificacoes(int notificacoes) {this.notificacoes = notificacoes;}
 }
