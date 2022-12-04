@@ -44,12 +44,15 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="biblioteca"/>
 			<item value="br.ufba"/>
 		</list>
 		<list key="name">
+			<item value="BibliotecaV3"/>
 			<item value="biblioteca"/>
 		</list>
 		<list key="artifactId">
+			<item value="bibliotecaV3"/>
 			<item value="biblioteca"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -61,6 +64,7 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
 			<item value="1.0.0"/>
 		</list>
 	</section>
