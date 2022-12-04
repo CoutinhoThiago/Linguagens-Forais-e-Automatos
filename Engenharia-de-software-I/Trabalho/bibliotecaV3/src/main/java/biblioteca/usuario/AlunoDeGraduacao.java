@@ -8,7 +8,7 @@ import biblioteca.livro.Exemplar;
 import biblioteca.livro.Livro;
 import biblioteca.livro.Reserva;
 
-public class Professor implements Observer, IUsuario{
+public class AlunoDeGraduacao implements Observer, IUsuario{
 	private int codigo;
 	private String nome;
 	
@@ -26,12 +26,12 @@ public class Professor implements Observer, IUsuario{
 	private List<Reserva> reservas;
 
 //----------//-----Construtor-----//----------//
-	public  Professor(int codigo, String nome) {
+	public  AlunoDeGraduacao(int codigo, String nome) {
 		this.codigo = codigo;
         this.nome= nome;
         
-        this.tempoDeImprestimo = 7; //7 dias
-        this.quantidadeDeItensReservados = 9999; // Sem limite de livros
+        this.tempoDeImprestimo = 3; //3 dias
+        this.quantidadeDeItensReservados = 3; //3 dias
         this.setNotificacoes(0);
         
         this.emprestimosCorrentes = new ArrayList<Emprestimo>();

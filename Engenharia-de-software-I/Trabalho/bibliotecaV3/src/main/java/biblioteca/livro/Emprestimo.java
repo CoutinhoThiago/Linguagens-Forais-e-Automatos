@@ -2,11 +2,12 @@ package biblioteca.livro;
 
 import java.time.LocalDate;
 
+import biblioteca.usuario.IUsuario;
 import biblioteca.usuario.Professor;
 
 public class Emprestimo {
 	private int codigo;
-	private Professor usuario;
+	private IUsuario usuario;
 	private Livro livro;
 	private Exemplar exemplar;
 		
@@ -16,8 +17,8 @@ public class Emprestimo {
 	private LocalDate dataDeDevolucao;
 		
 //----------//-----Construtor-----//----------//
-	public Emprestimo(Professor usuario, Livro livro, Exemplar exemplar) {
-		this.usuario = (usuario);
+	public Emprestimo(IUsuario usuario2, Livro livro, Exemplar exemplar) {
+		this.usuario = (usuario2);
 		this.livro = (livro);
 		this.exemplar = exemplar;
 			
@@ -34,7 +35,7 @@ public class Emprestimo {
 		this.codigo = codigo;
 	}
 
-	public Professor getUsuario() {
+	public IUsuario getUsuario() {
 		return usuario;
 	}
 

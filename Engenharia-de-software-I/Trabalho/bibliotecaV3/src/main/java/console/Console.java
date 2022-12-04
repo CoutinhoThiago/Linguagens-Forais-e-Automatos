@@ -8,6 +8,7 @@ import java.util.Scanner;
 import biblioteca.Dados;
 import biblioteca.livro.Exemplar;
 import biblioteca.livro.Livro;
+import biblioteca.usuario.IUsuario;
 import biblioteca.usuario.Professor;
 import console.comandos.ConsultarLivro;
 import console.comandos.ConsultarNotificacoes;
@@ -21,7 +22,7 @@ public class Console {
 	
 	public static void selecionarFuncionalidade() {
 		Dados dados = new Dados();
-		List<Professor> usuarios = dados.getListaDeUsuarios();
+		List<IUsuario> usuarios = dados.getListaDeUsuarios();
 		List<Livro> livros = dados.getListaDeLivros();
 		
 		
@@ -70,7 +71,7 @@ public class Console {
 				int codigoDoUsuario = Integer.parseInt(entrada[1]);	//System.out.println(codigoDoUsuario);
 				int codigoDoLivro = Integer.parseInt(entrada[2]);	//System.out.println(codigoDoLivro);
 				
-				Professor usuario = buscarUsuario(usuarios, codigoDoUsuario);
+				IUsuario usuario = buscarUsuario(usuarios, codigoDoUsuario);
 				Livro livro = buscarLivro(livros, codigoDoLivro);
 				
 //				List<Livro> listaDeExemplares = buscarExemplares(livros, codigoDoLivro);
@@ -100,13 +101,13 @@ public class Console {
 			}
 			else if (operacao.equals("usu")) {
 				int codigoDoUsuario = Integer.parseInt(entrada[1]);	//System.out.println(codigoDoUsuario);
-				Professor usuario = buscarUsuario(usuarios, codigoDoUsuario);
+				IUsuario usuario = buscarUsuario(usuarios, codigoDoUsuario);
 				Comando comando = new ConsultarUsuario();
 					comando.executar(dados, usuario, livros, null);
 			}
 			else if (operacao.equals("ntf")) {
 				int codigoDoUsuario = Integer.parseInt(entrada[1]);	//System.out.println(codigoDoUsuario);
-				Professor usuario = buscarUsuario(usuarios, codigoDoUsuario);
+				IUsuario usuario = buscarUsuario(usuarios, codigoDoUsuario);
 				Comando comando = new ConsultarNotificacoes();
 					comando.executar(dados, usuario, livros, null);
 			}
@@ -121,10 +122,10 @@ public class Console {
 		}
 	}
 
-	static Professor buscarUsuario(List<Professor> usuarios, int codigoDoUsuario) {
+	static IUsuario buscarUsuario(List<IUsuario> usuarios, int codigoDoUsuario) {
 		for(int i = 0; i < usuarios.size(); i++){
 			System.out.println("buscando usuario...");
-			Professor usuario = usuarios.get(i);
+			IUsuario usuario = usuarios.get(i);
 			if(usuario.getCodigo() == codigoDoUsuario) {
 				System.out.println("Usuario: " + usuario.getNome() + " encontrado");
 				return usuario;

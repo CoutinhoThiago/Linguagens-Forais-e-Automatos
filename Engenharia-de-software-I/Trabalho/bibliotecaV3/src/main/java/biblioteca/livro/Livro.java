@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import biblioteca.usuario.IUsuario;
 import biblioteca.usuario.Observer;
 
 public class Livro implements Subject{
@@ -36,8 +37,8 @@ public class Livro implements Subject{
 	}
 	
 //----------//-----Observer-----//----------//
-	public void registerObserver(Observer observador) {
-		observers.add(observador);
+	public void registerObserver(Observer usuario) {
+		observers.add(usuario);
 	}
 	public void removeObserver(Observer o) {
 		int i = observers.indexOf(o);

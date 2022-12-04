@@ -1,5 +1,6 @@
 package biblioteca.livro;
 
+import biblioteca.usuario.IUsuario;
 import biblioteca.usuario.Observer;
 
 public interface Subject {

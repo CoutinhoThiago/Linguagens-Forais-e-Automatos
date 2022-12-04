@@ -1,22 +1,22 @@
 package biblioteca;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import biblioteca.livro.Emprestimo;
 import biblioteca.livro.Exemplar;
 import biblioteca.livro.Livro;
 import biblioteca.livro.Reserva;
+import biblioteca.usuario.IUsuario;
 import biblioteca.usuario.Professor;
 
 public class Biblioteca {
-	public static void registerObserver(Livro livro, Professor usuario) {
-		livro.registerObserver(usuario);
+	public static void registerObserver(Livro livro, IUsuario usuario) {
+		livro.registerObserver((Professor) usuario);
 		System.out.println("Usuario registrado como observador");
 		
 	}
 	
-	public static void devolver(Livro livro, Professor usuario) {
+	public static void devolver(Livro livro, IUsuario usuario) {
 		Exemplar exemplar = consultarEmprestimos(livro, usuario);
 		if(exemplar != null) {
 			System.out.println("Realizando devolução");
@@ -36,7 +36,7 @@ public class Biblioteca {
 		}
 	}
 	
-	private static Exemplar consultarEmprestimos(Livro livro, Professor usuario) {
+	private static Exemplar consultarEmprestimos(Livro livro, IUsuario usuario) {
 		List<Exemplar> exemplares = livro.getExemplares();
 		for(int j = 0; j < exemplares.size(); j++){
 			System.out.println("Verificando emprestimos do usuario...");
@@ -51,7 +51,7 @@ public class Biblioteca {
 		return null;
 	}
 
-	public static void pegarEmprestado(Livro livro, Professor usuario) {
+	public static void pegarEmprestado(Livro livro, IUsuario usuario) {
 		Exemplar exemplarReservado = consultarReservasDoUsuario(livro, usuario);
 		if(exemplarReservado != null) {
 			System.out.println("Efetuando emprestimo");
@@ -86,7 +86,7 @@ public class Biblioteca {
 		}
 	}
 	
-	private static Exemplar consultarReservasDoUsuario(Livro livro, Professor usuario) {
+	private static Exemplar consultarReservasDoUsuario(Livro livro, IUsuario usuario) {
 		List<Exemplar> exemplares = livro.getExemplares();
 		for(int j = 0; j < exemplares.size(); j++){
 			System.out.println("Verificando reservas do usuario...");
@@ -104,7 +104,7 @@ public class Biblioteca {
 		return null;
 	}
 
-	public static void reservar(Livro livro, Professor usuario) {
+	public static void reservar(Livro livro, IUsuario usuario) {
 		Exemplar exemplar = consultarDisponibilidadeDosExemplares(livro);
 		if(exemplar != null) {
 			System.out.println("Efetuando reserva");
@@ -138,7 +138,7 @@ public class Biblioteca {
 	
 //----------//----------//-----Consultas-----//----------//----------//
 
-	public static void consultarNotificacoes(Professor usuario) {
+	public static void consultarNotificacoes(IUsuario usuario) {
 		if(usuario.getNotificacoes() == 0) {
 			System.out.println(" O usuario " + usuario.getNome() + " não foi notificado nenhuma vez");
 		}
@@ -149,7 +149,7 @@ public class Biblioteca {
 			System.out.println("O usuario " + usuario.getNome() + " foi notificado " + usuario.getNotificacoes() + " vezes");
 		}
 	}
-	public static void consultarUsuario(Professor usuario, List<Livro> livros) {
+	public static void consultarUsuario(IUsuario usuario, List<Livro> livros) {
 		List<Emprestimo> emprestimosCorrentes = usuario.getEmprestimosCorrentes();
 		List<Emprestimo> emprestimosAntigos = usuario.getEmprestimosAntigos();
 		List<Reserva> reservas = usuario.getReservas();
@@ -177,7 +177,7 @@ public class Biblioteca {
 		}
 	}
 
-	public static void consultarLivro(Professor usuario, Livro livro) {
+	public static void consultarLivro(IUsuario usuario, Livro livro) {
 		System.out.println();
 		System.out.println("Livro: " + livro.getNome());
 		int quantidadeDeReservas = livro.getQuantidadeDeReservas();

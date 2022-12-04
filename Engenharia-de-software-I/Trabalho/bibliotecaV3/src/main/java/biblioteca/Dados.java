@@ -7,22 +7,25 @@ import java.util.List;
 
 import biblioteca.livro.Exemplar;
 import biblioteca.livro.Livro;
+import biblioteca.usuario.AlunoDeGraduacao;
+import biblioteca.usuario.AlunoDePosGraduacao;
+import biblioteca.usuario.IUsuario;
 import biblioteca.usuario.Professor;
 
 
 public class Dados {
-	List<Professor> usuarios = new ArrayList<Professor>();
+	List<IUsuario> usuarios = new ArrayList<IUsuario>();
 	List<Livro> livros = new ArrayList<Livro>();
 	
 	public Dados() {
-		Professor usuario1 = new Professor(123, "João da Silva"); //AlunoDeGraduacao(123, "João da Silva");
-		this.usuarios.add(usuario1);
-		Professor usuario2 = new Professor(456, "Luiz Fernando Rodrigues"); //AlunoDePosGraduacao(456, "Luiz Fernando Rodrigues");
-		this.usuarios.add(usuario2);
-		Professor usuario3 = new Professor(789, "Pedro Paulo"); //AlunoDeGraduacao(789, "Pedro Paulo");
-		this.usuarios.add(usuario3);
-		Professor usuario4 = new Professor(100, "Carlos Lucena");
-		this.usuarios.add(usuario4);
+		IUsuario usuario1 = new AlunoDeGraduacao(123, "João da Silva");
+			this.usuarios.add(usuario1);
+		IUsuario usuario2 = new AlunoDePosGraduacao(456, "Luiz Fernando Rodrigues");
+			this.usuarios.add(usuario2);
+		IUsuario usuario3 = new AlunoDeGraduacao(789, "Pedro Paulo");
+			this.usuarios.add(usuario3);
+		IUsuario usuario4 = new Professor(100, "Carlos Lucena");
+			this.usuarios.add(usuario4);
 		
 		Livro l100 = new Livro(100, "Engenharia de Software", "Addison Wesley", "Ian Sommervile", "6ª", 2000);
 			l100.addExemplar(new Exemplar());
@@ -54,7 +57,7 @@ public class Dados {
 	public List<Livro> getListaDeLivros() {
 		return livros;
 	}
-	public List<Professor> getListaDeUsuarios() {
+	public List<IUsuario> getListaDeUsuarios() {
 		return usuarios;
 	}
 

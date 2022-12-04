@@ -3,10 +3,11 @@ package biblioteca.livro;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import biblioteca.usuario.IUsuario;
 import biblioteca.usuario.Professor;
 
 public class Reserva {
-	private Professor usuario;
+	private IUsuario usuario;
 	private Livro livro;
 	private Exemplar exemplar;
 	
@@ -14,7 +15,7 @@ public class Reserva {
 	
 	private LocalDate dataDaSolicitacao;
 	
-	public Reserva(Professor usuario, Livro livro, Exemplar exemplar) {
+	public Reserva(IUsuario usuario, Livro livro, Exemplar exemplar) {
 		this.usuario = usuario;
 		this.setLivro(livro);
 		this.setExemplar(exemplar);
@@ -23,7 +24,7 @@ public class Reserva {
 		this.setDataDaSolicitacao(LocalDate.now());
 	}
 
-	public Professor getUsuario() {
+	public IUsuario getUsuario() {
 		return usuario;
 	}
 
