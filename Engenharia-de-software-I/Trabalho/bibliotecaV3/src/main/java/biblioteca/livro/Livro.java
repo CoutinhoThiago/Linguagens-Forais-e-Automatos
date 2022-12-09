@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import biblioteca.Reserva;
+import biblioteca.livro.item.Exemplar;
 import biblioteca.usuario.IUsuario;
 import biblioteca.usuario.Observer;
 

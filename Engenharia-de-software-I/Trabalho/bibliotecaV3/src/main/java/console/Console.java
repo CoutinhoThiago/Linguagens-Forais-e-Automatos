@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Scanner;
 
 import biblioteca.Dados;
-import biblioteca.livro.Exemplar;
 import biblioteca.livro.Livro;
+import biblioteca.livro.item.Exemplar;
 import biblioteca.usuario.IUsuario;
-import biblioteca.usuario.Professor;
+import biblioteca.usuario.tipo.Professor;
 import console.comandos.ConsultarLivro;
 import console.comandos.ConsultarNotificacoes;
 import console.comandos.ConsultarUsuario;

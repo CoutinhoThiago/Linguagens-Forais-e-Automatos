@@ -1,14 +1,16 @@
-package biblioteca.usuario;
+package biblioteca.usuario.tipo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import biblioteca.livro.Emprestimo;
-import biblioteca.livro.Exemplar;
+import biblioteca.Reserva;
 import biblioteca.livro.Livro;
-import biblioteca.livro.Reserva;
+import biblioteca.livro.item.Emprestimo;
+import biblioteca.livro.item.Exemplar;
+import biblioteca.usuario.IUsuario;
+import biblioteca.usuario.Observer;
 
-public class AlunoDeGraduacao implements Observer, IUsuario{
+public class AlunoDePosGraduacao implements Observer, IUsuario{
 	private int codigo;
 	private String nome;
 	
@@ -26,12 +28,12 @@ public class AlunoDeGraduacao implements Observer, IUsuario{
 	private List<Reserva> reservas;
 
 //----------//-----Construtor-----//----------//
-	public  AlunoDeGraduacao(int codigo, String nome) {
+	public  AlunoDePosGraduacao(int codigo, String nome) {
 		this.codigo = codigo;
         this.nome= nome;
         
-        this.tempoDeImprestimo = 3; //3 dias
-        this.quantidadeDeItensReservados = 3; //3 dias
+        this.tempoDeImprestimo = 4; //4 dias
+        this.quantidadeDeItensReservados = 4; // Sem limite de livros
         this.setNotificacoes(0);
         
         this.emprestimosCorrentes = new ArrayList<Emprestimo>();

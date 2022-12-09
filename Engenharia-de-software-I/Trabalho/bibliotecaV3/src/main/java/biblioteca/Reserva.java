@@ -1,10 +1,12 @@
-package biblioteca.livro;
+package biblioteca;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import biblioteca.livro.Livro;
+import biblioteca.livro.item.Exemplar;
 import biblioteca.usuario.IUsuario;
-import biblioteca.usuario.Professor;
+import biblioteca.usuario.tipo.Professor;
 
 public class Reserva {
 	private IUsuario usuario;

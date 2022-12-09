@@ -1,9 +1,10 @@
-package biblioteca.livro;
+package biblioteca.livro.item;
 
 import java.time.LocalDate;
 
+import biblioteca.livro.Livro;
 import biblioteca.usuario.IUsuario;
-import biblioteca.usuario.Professor;
+import biblioteca.usuario.tipo.Professor;
 
 public class Emprestimo {
 	private int codigo;

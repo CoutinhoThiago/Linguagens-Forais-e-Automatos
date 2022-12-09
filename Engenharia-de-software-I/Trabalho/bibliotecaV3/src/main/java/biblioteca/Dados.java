@@ -5,12 +5,12 @@ package biblioteca;
 import java.util.ArrayList;
 import java.util.List;
 
-import biblioteca.livro.Exemplar;
 import biblioteca.livro.Livro;
-import biblioteca.usuario.AlunoDeGraduacao;
-import biblioteca.usuario.AlunoDePosGraduacao;
+import biblioteca.livro.item.Exemplar;
 import biblioteca.usuario.IUsuario;
-import biblioteca.usuario.Professor;
+import biblioteca.usuario.tipo.AlunoDeGraduacao;
+import biblioteca.usuario.tipo.AlunoDePosGraduacao;
+import biblioteca.usuario.tipo.Professor;
 
 
 public class Dados {

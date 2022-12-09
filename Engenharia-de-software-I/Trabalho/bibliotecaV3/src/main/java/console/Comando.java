@@ -5,7 +5,7 @@ import java.util.List;
 import biblioteca.Dados;
 import biblioteca.livro.Livro;
 import biblioteca.usuario.IUsuario;
-import biblioteca.usuario.Professor;
+import biblioteca.usuario.tipo.Professor;
 
 public interface Comando {
 	public void executar(

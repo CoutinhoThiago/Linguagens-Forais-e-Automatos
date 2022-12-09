@@ -6,7 +6,7 @@ import biblioteca.Biblioteca;
 import biblioteca.Dados;
 import biblioteca.livro.Livro;
 import biblioteca.usuario.IUsuario;
-import biblioteca.usuario.Professor;
+import biblioteca.usuario.tipo.Professor;
 import console.Comando;
 
 public class RegistrarObservador implements Comando { // EX: "obs

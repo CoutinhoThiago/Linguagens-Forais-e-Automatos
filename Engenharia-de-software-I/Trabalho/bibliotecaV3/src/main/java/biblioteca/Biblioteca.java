@@ -2,12 +2,11 @@ package biblioteca;
 
 import java.util.List;
 
-import biblioteca.livro.Emprestimo;
-import biblioteca.livro.Exemplar;
 import biblioteca.livro.Livro;
-import biblioteca.livro.Reserva;
+import biblioteca.livro.item.Emprestimo;
+import biblioteca.livro.item.Exemplar;
 import biblioteca.usuario.IUsuario;
-import biblioteca.usuario.Professor;
+import biblioteca.usuario.tipo.Professor;
 
 public class Biblioteca {
 	public static void registerObserver(Livro livro, IUsuario usuario) {

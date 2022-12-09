@@ -1,7 +1,9 @@
-package biblioteca.livro;
+package biblioteca.livro.item;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import biblioteca.Reserva;
 
 public class Exemplar {
 	private int codigoDoExemplar = 0;

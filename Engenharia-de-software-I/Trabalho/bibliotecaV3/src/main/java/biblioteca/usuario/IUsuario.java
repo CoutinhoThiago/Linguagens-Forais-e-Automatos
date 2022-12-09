@@ -2,8 +2,8 @@ package biblioteca.usuario;
 
 import java.util.List;
 
-import biblioteca.livro.Emprestimo;
-import biblioteca.livro.Reserva;
+import biblioteca.Reserva;
+import biblioteca.livro.item.Emprestimo;
 
 public interface IUsuario {
 	public int getCodigo();
