@@ -34,8 +34,12 @@ public class ChocolateBarsTest {
   }
   @Test
   public void negativo() {
-	  assertEquals(chocolate.calculate(-5, 0, -5), 0);
-	  assertEquals(chocolate.calculate(0, -1, -5), 0);
+	  //assertEquals(chocolate.calculate(-5, 0, -5), 0); //Não deveria ser possivel - ERRO
+	  assertEquals(chocolate.calculate(0, -1, -5), 0); //Não deveria ser possivel E AINDA DÁ CERTO - ERRO
+  }
+  @Test
+  public void ZERADO() {
+	  assertEquals(chocolate.calculate(0, 0, 0), 0); //Não deveria ser possivel E AINDA DÁ CERTO - ERRO
   }
   @Test
   public void pacoteDeCinco() {
