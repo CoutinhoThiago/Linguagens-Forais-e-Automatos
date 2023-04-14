@@ -33,6 +33,11 @@ public class ChocolateBarsTest {
 	  assertEquals(chocolate.calculate(4, 5, 4), 4); //enche sem nenhuma grande
   }
   @Test
+  public void negativo() {
+	  assertEquals(chocolate.calculate(-5, 0, -5), 0);
+	  assertEquals(chocolate.calculate(0, -1, -5), 0);
+  }
+  @Test
   public void pacoteDeCinco() {
 	  assertEquals(chocolate.calculate(100, 1, 6), 1); //uma grande uma pequena
 	  
