@@ -1,4 +1,4 @@
-# [UFBA](https://github.com/CoutinhoThiago/UFBA, align="center")
+# [UFBA](https://github.com/CoutinhoThiago/UFBA)
 > Descrição
 
 <br>
