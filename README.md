@@ -1,4 +1,4 @@
-# UFBA
+# [UFBA](align=center)
 > Descrição
 
 <br>
