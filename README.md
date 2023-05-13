@@ -1,4 +1,4 @@
-# [UFBA](align=center)
+# [UFBA](align="center")
 > Descrição
 
 <br>
