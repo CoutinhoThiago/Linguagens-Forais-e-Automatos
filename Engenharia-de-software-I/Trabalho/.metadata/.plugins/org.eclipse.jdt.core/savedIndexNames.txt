@@ -1,6 +1,0 @@
-INDEX VERSION 1.131+C:\Users\tcout\Documents\GitHub\UFBA\Engenharia-de-software-I\Trabalho\.metadata\.plugins\org.eclipse.jdt.core
-860589561.index
-143947086.index
-1551722135.index
-4088752234.index
-1865797976.index

@@ -1,0 +1,13 @@
+V= {'S'}
+Sigma = {'a','b'}
+R = {('S','aSa'),
+     ('S','bSb'),
+     ('S','a'),
+     ('S','b'),
+     ('S','')}
+S='S'
+G = GLC(V,Sigma,R,S)
+G.print()
+print(G.gera("abbba"))
+print(G.gera("baaabbbaaab"))
+print(G.gera("bbabb"))
