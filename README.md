@@ -5,7 +5,7 @@
 
 ## Matérias
 #### [ACSS](ACSS)
-#### [Computador Etica e Sociedade]()
+#### [Computador Etica e Sociedade](putador Etica e Sociedade)
 #### [Engenharia de software I]()
 #### [Linguagens Forais e Automatos]()
 #### [Paradigmas de Linguagens de Programação]()
