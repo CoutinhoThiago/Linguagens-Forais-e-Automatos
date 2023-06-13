@@ -4,8 +4,8 @@
 
 (let ((lista (read)))
   (if (lista-ordenada lista)
-      (format t "A lista ~a esta ordenada." lista)
-      (format t "A lista ~a nao esta ordenada." lista)))
+      (format t "A lista ~a esta ordenada" lista)
+      (format t "A lista ~a nao esta ordenada" lista)))
 
 
 ; Exemplo
