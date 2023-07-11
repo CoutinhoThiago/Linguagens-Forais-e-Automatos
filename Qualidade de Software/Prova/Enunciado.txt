@@ -1,0 +1,20 @@
+### Prova
+Faça download do código fonte disponibilizado aqui nessa tarefa do AVA. Ele contém a classe LeftPadUtils.
+
+Implemente em JUnit uma classe para testar o método String leftPad(final String str, final int size, String padStr).
+
+Requisitos:
+Esse método completa a string str pela esquerda com a string padStr até que a resultante fique do tamanho size.
+
+- str: string a ser completada. Pode ser nula.
+- size: o tamanho até o qual str deve ser completada.
+- padStr: a string com a qual str deve ser completada. Nulo ou string vazia são tratados como espaço em branco.
+O método retorna: (i) a string resultante, ou seja, a string complementada, (ii) a string original (str), se nenhum complemento foi necessário, ou (iii) nulo se a string str fornecida como entrada foi nula.
+
+Por exemplo, considere que o método receba: (i) "abc" como conteúdo do parâmetros str, (ii) a string "-" como conteúdo do parâmetro padStr, e (iii) 5 como conteúdo do parâmetro size. Nesse caso, ele retornará a string "--abc".
+
+Para criar os casos de testes, leve em conta a técnica de testes baseados na especificação e a técnica de testes estruturais discutidos e praticados em sala de aula. No código da classe de teste, indique por meio de comentários os casos de testes que você criou com base em cada uma das duas técnicas.
+
+Além de implementar a classe de testes, escreva em um arquivo texto as categorias (ou partições) relativas a cada parâmetro e as relativas a alguma combinação entre os parâmetros (se necessário) que você pensou para definir os casos de testes de acordo com a técnica de testes baseados na especificação. Se você pensou em fronteiras, as descreva também.
+
+Faça upload do arquivo da classe de teste e do arquivo texto como resposta da prova aqui nessa tarefa do AVA.
