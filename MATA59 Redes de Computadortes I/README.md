@@ -16,7 +16,10 @@
 7. História das redes de computadores e da Internet
 
 #### Camada de aplicação (Cap2)
+
 #### Camada de Transporte (Cap3)
+
 #### Camada de Rede (Cap4)
+
 #### Camada Enlace e Física (Cap5 e 6)
 
