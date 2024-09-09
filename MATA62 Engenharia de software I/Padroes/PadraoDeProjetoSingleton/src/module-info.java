@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author tcout
- *
- */
-module PadraoDeProjetoSingleton {
-}
