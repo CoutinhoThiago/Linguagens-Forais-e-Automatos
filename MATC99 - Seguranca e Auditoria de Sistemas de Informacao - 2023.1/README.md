@@ -1,4 +1,10 @@
-<h1 align = "center"> Seguranca e Auditoria de Sistemas de Informacao </h1>
+# MATC99 - Seguranca e Auditoria de Sistemas de Informacao (2023.1)
+- Semeste: 2023.1
+- Professor: L****** - Ótimo <br>
+- Dificuldade: Fácil
+- Nota: 9,2
+
+<br>
 
 ## Ementa:
 > Os conceitos e os tipos de ameaças, riscos e vulnerabilidades dos sistemas de informação. O conceito e os objetivos da segurança de informações. Segurança de dados. Segurança física. Criptografia. Autenticação e controle de acesso. Certificados e assinaturas digitais. Detecção de intrusão. O conceito e os objetivos da auditoria de sistemas de informação. Técnicas de auditoria em sistemas de informação e Web. Softwares de auditoria. Estrutura da função de auditoria de sistemas de informação nas organizações.
