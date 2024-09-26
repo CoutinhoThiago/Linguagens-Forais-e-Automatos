@@ -1,0 +1,31 @@
+Q = {'q0','IZ','PZ','I','P'}
+Sigma = {'0','1'}
+delta = {
+    ('q0','0'):{'IZ'},
+    ('q0','1'):{'I'},
+    ('IZ','0'):{'PZ'},
+    ('IZ','1'):{'PZ'},
+    ('PZ','1'):{'IZ'},
+    ('I','0'):{'P'},
+    ('I','1'):{'P'},
+    ('P','0'):{'IZ'},
+    ('P','1'):{'I'},
+}
+
+q0 = 'q0'
+F = {'IZ','PZ'}
+
+M = AFN(Q,Sigma,delta,q0,F)
+M.visualizar()
+
+#M.aceita("01")
+#M.aceita("00")
+#M.aceita("01")
+#M.aceita("000")
+#M.aceita("011")
+#M.aceita("100")
+#M.aceita("110")
+#M.aceita("0010")
+#M.aceita("0100")
+#M.aceita("0100")
+#M.aceita("1001")

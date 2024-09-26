@@ -1,0 +1,18 @@
+
+body {
+	background: lightgrey;
+	padding: 20px 0;
+}
+footer {
+	background: lightgrey;
+	padding: 20px 0;
+}
+
+.opcoes {
+    text-align: center;
+    display: inline-flex;
+}
+
+.caixaFluida {
+    align-items: center;
+}

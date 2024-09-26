@@ -1,0 +1,18 @@
+2.Retire o máximo de parênteses da ER  (((00)+(1(11∗)))∗((01)((01)(0+1)))) , sem alterar seu significado.
+Inicialmente, podemos remover os parênteses das extremidades:
+
+(((00)+(1(11∗)))∗((01)((01)(0+1))))=
+
+=((00)+(1(11∗)))∗((01)((01)(0+1)))
+
+=((00)+(111∗))∗((01)((01)(0+1)))
+
+=(00+111∗)∗((01)((01)(0+1)))
+
+=(00+111∗)∗(01)(01)(0+1)
+
+A concatenação de (01)(01) pode ser escrita como 0101, logo:
+
+(((00)+(1(11∗)))∗((01)((01)(0+1))))=(00+111∗)∗0101(0+1)
+
+Então, podemos retirar os parênteses da ER original até chegarmos à ER  (00+111∗)∗0101(0+1)  sem alterar seu o significado.

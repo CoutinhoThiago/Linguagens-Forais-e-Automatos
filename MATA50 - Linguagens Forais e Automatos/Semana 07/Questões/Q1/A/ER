@@ -1,6 +1,0 @@
-#1.Obtenha expressões regulares que denotem as linguagens:
-#{w∈{0,1}∗∣w  inicia com 0 e  |w|  é par } .
-
-E = ER("0(0|1)((0|1)(0|1))*")
-
-E.gera("01010001")

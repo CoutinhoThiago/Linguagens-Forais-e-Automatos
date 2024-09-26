@@ -1,0 +1,10 @@
+ATA DE REUNIÃO N°1
+
+Pauta: 1) Organizar os horários de reuniões; 2) Decidir a arquitetura a ser utilizada e seus benefícios; e 3) Avaliar o uso de atas de reunião.
+
+Participantes: Bruno Fortunato (Project manager), Jonathan Bispo (Tech lead), Luiz Silva (Programador), Thiago Coutinho (Quality assurance) e Yuri Moreira (Programador).
+
+
+Às 19:50 do dia 18 do mês de maio do ano de 2023, no instituto de matemática, reuniram-se os participantes Bruno Fortunato, Jonathan Bispo, Luiz Silva, Thiago Coutinho e Yuri Moreira a fim de discutirem a pauta do dia.
+O primeiro item a ser discutido foi a organização dos horários das reuniões, foi decidido que um cronograma será produzido e adicionado ao “read me” no GitHub. O segundo item da pauta (decidir a arquitetura a ser utilizada e seus benefícios) durante este item se decidiu que será utilizada a tecnologia de docker, Python, SQL, SQLAlchemy, FastAPI e React no desenvolvimento do programa, ao basear o sistema em Docker e Kubernetes permitem que o nosso sistema seja flexível quanto a sua escalabilidade, o uso do Python foi pensado por sua facilidade de criação de testes através do uso do Pytest, além do uso do SQLAlchemy para facilitar a representação dos dados no banco. O terceiro item da pauta a ser discutido foi quanto a validade do uso de atas de reunião 
+Sendo o que havia para o momento, deu-se por encerrada a reunião às 21:20 e, para constar, eu, Bruno Fortunato, lavrei a presente ata.

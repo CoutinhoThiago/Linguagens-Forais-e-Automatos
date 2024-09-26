@@ -1,4 +1,0 @@
-db/data/*
-!db/data/.gitkeep
-*/.env
-**/__pycache__

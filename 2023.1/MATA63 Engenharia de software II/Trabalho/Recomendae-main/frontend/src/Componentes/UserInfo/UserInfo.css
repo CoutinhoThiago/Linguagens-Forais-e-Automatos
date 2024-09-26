@@ -1,0 +1,23 @@
+.user-info {
+    display: flex;
+    align-items: center;
+  }
+  .login-options {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+  }
+  
+  .login-options span {
+    margin-bottom: 5px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .close-icon {
+    font-size: 24px;
+    color: red;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }

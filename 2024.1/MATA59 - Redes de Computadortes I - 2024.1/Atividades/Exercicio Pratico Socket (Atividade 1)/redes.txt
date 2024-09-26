@@ -1,0 +1,30 @@
+TCP
+Inicio de Conexões TCP:
+Os pacotes responsáveis pelo estabelecimento das conexões TCP podem ser identificados pelo flag "SYN" no protocolo TCP. Por exemplo:
+Pacotes 10, 11, 45, 46, 55 ...
+Fim das Conexões TCP:
+Os pacotes que indicam o fim das conexões TCP podem ser identificados pelo flag "FIN" ou "FIN, ACK" no protocolo TCP. Por exemplo:
+Pacotes 41, 49, 52 ...
+
+DNS
+Solicitações DNS:
+As solicitações DNS podem ser identificadas pelos pacotes com protocolo DNS. Por exemplo:
+Pacotes 8, 16, 23, 42 ...
+A diferença entre solicitações A e AAAA é que A é para obter o endereço IPv4 do nome do host, enquanto AAAA é para obter o endereço IPv6 do nome do host.
+Respostas DNS:
+As respostas DNS podem ser identificadas pelos pacotes de resposta do tipo "Standard query response". Por exemplo:
+Pacotes 9, 17, 31 ...
+O IP associado a cada URL é:
+http://www.globo.com: 186.192.81.5
+http://www.msn.com: 204.79.197.203
+http://www.google.com.br: 142.251.134.99
+
+HTTP
+Respostas HTTP:
+As respostas HTTP podem ser identificadas pelos pacotes com protocolo HTTP. Por exemplo:
+Pacotes 38 (resposta de www.globo.com), 50 (resposta de www.msn.com), 58 (resposta de www.google.com.br) ...
+O status (código HTTP) da resposta está presente nos cabeçalhos HTTP. Por exemplo:
+A resposta do servidor HTTP para a solicitação GET da URL http://www.globo.com possui o código de status 301 (Moved Permanently).
+A resposta do servidor HTTP para a solicitação GET da URL http://www.msn.com possui o código de status 301 (Moved Permanently).
+A resposta do servidor HTTP para a solicitação GET da URL http://www.google.com.br possui o código de status 301 (Moved Permanently).
+

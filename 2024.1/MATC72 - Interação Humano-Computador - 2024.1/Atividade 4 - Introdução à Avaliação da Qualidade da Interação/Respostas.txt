@@ -1,0 +1,102 @@
+
+Atividade 4: abordagens Teóricas em IHC
+Total de pontos: 16/16
+Nome completo: Thiago Coutinho Sousa Silva
+
+1. Qual é o principal conceito abordado pela Lei de Hick-Hyman?
+a) Relacionamento entre tempo e probabilidade das escolhas.
+b) Relacionamento entre tempo e distância.
+c) Relacionamento entre tempo e tamanho do objeto-alvo.
+- d) Relacionamento entre tempo e número de opções.
+
+2. Qual é a fórmula utilizada para calcular o tempo médio segundo a Lei de Fitts?
+a)T = k × P pilog2(1 + 1=pi)
+b)T = k × log2(N + 1)
+c) T = k × log2(D + S)
+- d) T = k × log2(D/S + 0.5)
+
+3. Como a Lei de Fitts é aplicada em design de interfaces?
+a) Calcula o tempo para apontar para um objeto numa tela.
+b) Define a relação entre tempo e número de opções.
+- c) Auxilia na decisão sobre o tamanho e localização de elementos de interface.
+d) Determina o tempo de reação para escolha entre opções.
+
+4. Qual é o principal objetivo da Engenharia Cognitiva?
+a) Estudar os processos de significação e comunicação.
+- b) Compreender os aspectos cognitivos da interação humano-computador.
+c) Investigar a atividade humana em contexto.
+d) Modelar o comportamento humano.
+
+5. Qual é a contribuição da semiótica para a interação humano-computador?
+a) Investigar a percepção de cores e luminância.
+- b) Criar uma psicologia baseada em análise de tarefas. ---(PROVAVELMENTE COM ERRO)
+c) Estabelecer modelos de memória de longo prazo.
+d) Desenvolver princípios de Gestalt para o design de interfaces.
+
+6. Qual é o principal objetivo proposto por Card et al. (1983) em sua abordagem de psicologia cognitiva aplicada?
+a) Desenvolver princípios de Gestalt para o design de interfaces.
+b) Investigar a percepção de cores e luminância.
+c) Estabelecer modelos de memória de longo prazo.
+- d) Criar uma psicologia baseada em análise de tarefas.
+
+7. O que compõe o Modelo do Processador Humano de Informação proposto por Card et al. (1983)?
+a) Quatro subsistemas: perceptivo, motor, cognitivo e emocional.
+b) Dois subsistemas: perceptivo e motor.
+c) Um subsistema: cognitivo.
+- d) Três subsistemas: perceptivo, motor e cognitivo.
+
+8. Qual é um dos princípios gestálticos destacados por Ware (2003) para a percepção de padrões visuais?
+a) Memória de longo prazo.
+- b) Proximidade.
+c) Tempo de ciclo.
+d) Conectividade.
+
+9. De acordo com Ware (2003), por que as cores vermelho, verde, amarelo, azul, preto e branco são consideradas especiais em todas as sociedades investigadas?
+a) Porque possuem maior brilho.
+b) Porque são facilmente distinguíveis por pessoas daltônicas.
+c) Porque são as cores primárias.
+- d) Porque são associadas a emoções universais.
+
+10. Quais características visuais são consideradas pré-atencionais, segundo Ware (2003)?
+a) Proximidade, boa continuidade e fecho.
+b) Contraste, simetria, similaridade e destino comum.
+c) Região comum e conectividade.
+- d) Cor, forma, movimentos simples e profundidade estereoscópica.
+
+11. Quais são os principais objetivos propostos por Norman (1986) na engenharia cognitiva? (Duas respostas estão certas, escolher uma das duas)
+- a) Entender os princípios fundamentais da ação e desempenho humano.
+b) Criar sistemas computacionais complexos.
+c) Investigar a origem das necessidades humanas.
+d) Desenvolver sistemas agradáveis de usar e engajadores para os usuários.
+
+12. Qual é a base da engenharia cognitiva, conforme descrito por Norman (1986)?
+a) A integração entre necessidades humanas e tecnologia.
+- b) A discrepância entre objetivos expressos psicologicamente e controles físicos de uma tarefa.
+c) A separação entre mente e corpo.
+d) A harmonia entre objetivos psicológicos e físicos.
+
+13. Quais são os principais problemas enfrentados pelos usuários em situações de controle de variáveis físicas, conforme exemplificado por Norman (1986)?
+a) Problemas de avaliação e controle.
+- b) Problemas de mapeamento, dificuldade de controle e avaliação.
+c) Problemas de mapeamento e avaliação.
+d) Problemas de manipulação e avaliação.
+
+14. Qual é a solução proposta por Norman (1986) para os problemas de controle de variáveis físicas, no exemplo das torneiras?
+- a) Utilizar torneiras com um único controle, onde uma dimensão controla o fluxo total de água e outra a temperatura.
+b) Aumentar o número de variáveis físicas controláveis na torneira.
+c) Manter as torneiras convencionais e fornecer instruções detalhadas para os usuários.
+d) Torneiras convencionais com controles independentes para água fria e água quente.
+
+15. Qual é a principal vantagem das torneiras com um único controle, de acordo com Norman (1986)?
+a) Elas reduzem a dificuldade de manipulação simultânea de controles.
+b) Elas permitem maior flexibilidade no controle das variáveis.
+c) Elas eliminam a necessidade de avaliação por parte do usuário.
+- d) Elas simplificam o mapeamento entre variáveis físicas e psicológicas.
+
+16. De acordo com Norman (1991), o que representam os "golfos de execução" e "golfos de avaliação"?
+- a) Dificuldades encontradas pelos usuários na execução de tarefas e na avaliação de resultados.
+b) Conceitos relacionados à memória de curto prazo.
+c) Desafios enfrentados pelos designers na criação de interfaces de usuário.
+d) Etapas do ciclo de vida de um sistema computacional.
+Este conteúdo não foi criado nem aprovado pelo Google. Denunciar abuso - Termos de Serviço - Política de Privacidade
+Google Formulários

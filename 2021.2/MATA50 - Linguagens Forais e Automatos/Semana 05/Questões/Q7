@@ -1,0 +1,36 @@
+Construa um AFN para a seguinte linguagem sobre o alfabeto  Σ={a,b,c} : O conjunto das palavras em que o ultimo símbolo tenha ocorrido antes no maximo uma vez.
+Q = {'q0','q1','q2','q3','i0','i1','i2','f'}
+Sigma = {'a','b','c'}
+delta = {('q0',''):{'q1','q2','q3'},
+
+         ('q2','a'):{'i0','f'},
+         ('q2','b'):{'q2'},
+         ('q2','c'):{'q2'},
+
+         ('q1','a'):{'q1'},
+         ('q1','b'):{'i1','f'},
+         ('q1','c'):{'q1'},
+
+         ('q3','a'):{'q3'},
+         ('q3','b'):{'q3'},
+         ('q3','c'):{'i2','f'},
+
+         ('i0','a'):{'f'},
+         ('i0','b'):{'i0'},
+         ('i0','c'):{'i0'},
+
+         ('i1','a'):{'i1'},
+         ('i1','b'):{'f'},
+         ('i1','c'):{'i1'},
+
+         ('i2','a'):{'i2'},
+         ('i2','b'):{'i2'},
+         ('i2','c'):{'f'}
+         }
+q0 = 'q0'
+F = {'f'}
+
+M = AFN(Q,Sigma,delta,q0,F)
+M.visualizar()
+#M.aceita("babcba")
+#M.aceita("bbccccaba")
